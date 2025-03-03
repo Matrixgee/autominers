@@ -1,0 +1,36 @@
+.feeds-container{
+    width: 100%;
+}
+.feeds-btn{
+    margin-top: 2rem;
+    width: 30%;
+    background: #CDE1E9;
+    font-family: 'Goldman', cursive;
+    font-size: 20px;
+    border-radius: 16px;
+    border: none;
+
+}
+.btn-container{
+    text-align: right;
+    width: 100%;
+}
+@media (min-width:768px) and (max-width:1024px){
+    .feeds-btn{
+        width: 50%;
+        font-size: 20px;
+        padding: .5rem;
+    }
+    .btn-container{
+        text-align: right;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .feeds-btn{
+        width: 100%;
+        font-size: 16px;
+        padding: .5rem;
+    }
+}

@@ -1,0 +1,118 @@
+.referral-section_body {
+  background: #022431;
+  border-radius: 16px;
+  padding: 1rem 2rem 10rem;
+  max-width: 738px;
+}
+
+.referral-section_body h2 {
+  color: #cde1e9;
+  font-family: "Goldman", cursive;
+  font-size: 24px;
+}
+
+.referral-section_body p {
+  color: #ffffff;
+  font-family: "poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-bottom: 2rem;
+}
+.input-wrapper {
+  /* width: 400px; */
+  max-width: 100%;
+  position: relative;
+}
+
+.input-wrapper input {
+  background-color: #accedb;
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.input-wrapper button {
+  background-color: #83b5c8;
+  color: #06597a;
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  font-family: "poppin", sans-serif;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .referral-section_body {
+    background: #022431;
+    border-radius: 16px;
+    padding: 1rem 2rem 10rem;
+    width: 100%;
+  }
+  .referral-section_body h2 {
+    color: #cde1e9;
+    font-family: "Goldman", cursive;
+    font-size: 20px;
+  }
+
+  .referral-section_body p {
+    color: #ffffff;
+    font-family: "poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 2rem;
+  }
+  .input-wrapper {
+    max-width: 100%;
+    position: relative;
+  }
+
+  .input-wrapper input {
+    background-color: #accedb;
+    border-radius: 12px;
+    width: 100%;
+  }
+  .input-wrapper button {
+    background-color: #83b5c8;
+    color: #06597a;
+    position: absolute;
+    right: 10px;
+    top: 20%;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+    font-family: "poppin", sans-serif;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .referral-section_body {
+    background: #022431;
+    border-radius: 16px;
+    padding: 1rem 1rem 10rem;
+    width: 100%;
+  }
+  .referral-section_body h2 {
+    color: #cde1e9;
+    font-family: "Goldman", cursive;
+    font-size: 15px;
+  }
+
+  .input-wrapper {
+    /* width: 400px; */
+    max-width: 100%;
+    position: relative;
+  }
+
+  .input-wrapper button {
+    height: 60%;
+    aspect-ratio: 1;
+    position: absolute;
+    width: 20%;
+
+  }
+}

@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Poppins:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #E6F0F3;
+    background-image: url(bg.png) !important;
+    background-blend-mode: hue !important;
+    background-blend-mode: multiply !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 50% !important;
+    background-attachment: fixed !important;
+
+}
+
+
+
+
+.DashboardSideNav {
+    background-color: #043649;
+    width: 15%;
+    overflow: hidden;
+    height: 700px;
+    position: fixed;
+    z-index: 39394;
+}
+
+
+.DashboardSideNav ul {
+    /* display: flex;
+    flex-direction: column;
+    /* justify-content: center !important;
+    align-items: center !important; */
+    /* width: 80% !important;
+    margin: 0 auto; */
+}
+
+.sidebarIcon {
+    color: white;
+    margin-right: 10px;
+}
+
+.DashboardSideNav li {
+    padding: 5px;
+    display: flex;
+    /* justify-content: space-around; */
+    width: 100%;
+    font-size: 13px;
+}
+
+.DashboardSideNav li a {
+    padding: 15px;
+    margin-top: -10px;
+    text-decoration: none;
+    color: white;
+}
+
+.DashboardSideNav li img {
+    height: 35px;
+}
+
+.DashboardLogo {
+    width: 40%;
+    margin: 20px auto;
+    padding: 5px;
+}
+
+.DashboardBottomlist {
+    position: absolute;
+    bottom: 70px;
+}
+
+/*Static Header style*/
+.staticHeader {
+    width: 85%;
+    position: fixed;
+    right: 0;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    z-index: 333;
+    background-color: #E6F0F3;
+}
+
+.Search {
+    height: 54px;
+    background-color: #E6F0F3;
+    display: flex;
+    padding: 5px;
+    border-radius: 10px;
+    width: 377px;
+}
+
+.Title {
+    font-size: 33px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.Search input {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+}
+
+.searchIcon {
+    color: #ACCEDB;
+    margin-top: 13px;
+    margin-right: 5px;
+}
+
+.GroupSearchLoginUser {
+    display: flex;
+    width: 65%;
+    justify-content: space-around;
+}
+
+.staticHeaderJustifyItems {
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/*end header*/
+/*start invesment style*/
+
+
+.MiddleContent {
+    width: 80%;
+    position: absolute;
+    right: 0;
+    /* padding: 20px; */
+    top: 20%;
+    margin: 0 auto;
+    padding-bottom: 20px !important;
+}
+
+.InvesmentProfiles {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5%;
+}
+
+.wideProfile h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #83B5C8;
+}
+
+.wideProfile {
+    width: 50%;
+    background-color: #054761;
+    border-radius: 10px;
+    height: 215px;
+    color: white;
+    padding: 10px 30px;
+}
+
+.manyProfile {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+
+}
+
+.groupActive {
+    color: #CDE1E9;
+}
+
+.narrowgroup,
+.widegroup {
+    background-color: #CDE1E9;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+
+/* Items */
+.MiningPlanCnt {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background: #054761;
+    width: 33%;
+    margin-right: 1%;
+    padding: 5px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.MiningPlanCnt h3 {
+    color: white;
+}
+
+/* .widegroup {} */
+
+.narrowgroup {
+
+    font-size: 16px;
+}
+
+.ProfileStatus {
+    background-color: #06597A;
+    border-radius: 10px;
+    padding: 10px 30px;
+    color: #83B5C8;
+    margin-bottom: 20px;
+    /* CDE1E9 */
+}
+
+.groupTwo,
+.TowProfile {
+    display: flex;
+    justify-content: space-between;
+}
+
+.groupSectionCnt {
+    margin-bottom: 10px;
+}
+
+.groupSectionCnt h4 {
+    font-size: 1.2rem;
+}
+
+/*aasset css*/
+
+.AssetsLists {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-right: 5%;
+}
+
+.Assets {
+    margin-right: 5%;
+}
+
+.AssetsLists .assetItem {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.assetItem {
+    width: 30%;
+    margin-right: 10px;
+    border: 1px solid rebeccapurple;
+}
+
+
+
+/*Transaction History*/
+
+.TableContainer {
+    background-color: #022431 !important;
+    color: white !important;
+    border-radius: 10px !important;
+    margin-right: 5%;
+    margin-top: 10rem;
+    width: 90% !important;
+    margin-bottom: 40px !important;
+}
+
+th,
+td {
+    color: white !important;
+}
+
+.TableBody p,
+.TableBody button {
+    color: white !important;
+}
+
+/* End of transaction history */
+
+/*Withdrawal */
+.MainShowcase h2 {
+    font-size: 17px;
+    text-align: justify;
+}
+
+.MainShowcase p {
+    font-size: 11px;
+    text-align: justify;
+    color: white;
+}
+
+.MainShowcase form {
+    width: 80%;
+    margin-top: 20%;
+
+}
+
+.Mainshowgrp {
+    width: 90%;
+    height: 80%;
+}
+
+.Mainshowgrp label {
+    display: block;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.Mainshowgrp form div {
+    width: 100%;
+}
+
+.Mainshowgrp select {
+    border-radius: 10px;
+    width: 100%;
+    padding: 5px;
+    outline: 0;
+    border: 0;
+    margin-bottom: 10px;
+}
+
+.btn-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-form .cBtn {
+    border: 0;
+    outline: 0;
+    background-color: #01151D;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.Mainshowgrp input {
+    width: 100% !important;
+    padding: 5px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.MainShowcase {
+    width: 45%;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #06597ad5;
+    padding: 10px 20px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    position: relative;
+}
+
+/* Deposit page*/
+
+.TopContainer {
+    width: 90%;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ACCEDB;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-right: 5%;
+    margin-bottom: 2%;
+}
+
+.TopContainerList {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5%;
+}
+
+.BottomContainerList {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.plansItem {
+    background-color: #076B92;
+    border-radius: 10px;
+    padding: 20px;
+    height: 150px;
+}
+
+.plansItem .PlanCoinAmount {}
+
+
+.alert-showcase {
+    border-radius: 10px;
+    background-color: #ACCEDB;
+    padding: 20px;
+    text-align: center;
+    margin-top: 10%;
+    margin-right: 5%;
+}
+
+.MiningPlan {
+    display: flex;
+    width: 90%;
+}
+
+.MiningPlan img {
+    width: 162px;
+    height: 128px;
+}
+
+
+
+/*Mobile view */
+
+@media screen and (max-width: 991px) {}
+
+@media screen and (max-width: 767px) {
+    .TitleCnt {
+        display: none;
+    }
+
+    .DashboardSideNav {
+
+        width: 15%;
+
+    }
+
+    .GroupSearchLoginUser {
+        display: none;
+    }
+
+    .DashboardSideNav li a span {
+        display: none;
+    }
+
+    .DashboardSideNav li {
+
+        justify-content: space-around;
+        width: 100%;
+        font-size: 13px;
+        margin-left: -1% !important;
+    }
+
+    .wideProfile,
+    .manyProfile,
+    .TowProfile,
+    .groupSectionCnt,
+    .AssetsLists,
+    .assetItem,
+    .BottomContainerList,
+    .TopContainer,
+    .plansItem {
+        width: 100%;
+        margin-bottom: 15px !important;
+        display: block;
+    }
+
+    .BottomContainerList {
+        width: 90%;
+        margin-bottom: 15px !important;
+        display: block;
+        margin-right: 5%;
+    }
+
+
+}
+
+@media screen and (max-width: 480px) {
+    .TitleCnt {
+        display: none;
+    }
+
+    .DashboardSideNav {
+
+        width: 15%;
+
+    }
+
+    .InvesmentProfiles {
+        display: block;
+        margin-top: 44px;
+    }
+
+    .wideProfile,
+    .manyProfile,
+    .TowProfile,
+    .groupSectionCnt,
+    .AssetsLists,
+    .assetItem,
+    .BottomContainerList,
+    .TopContainer {
+        width: 100%;
+        margin-bottom: 15px !important;
+        display: block;
+    }
+
+    .narrowgroup,
+    .widegroup {
+        margin-bottom: 10px;
+    }
+
+
+    .GroupSearchLoginUser {
+        display: none;
+    }
+
+    .DashboardSideNav li a span {
+        display: none;
+    }
+
+    .DashboardSideNav li {
+
+        justify-content: space-around;
+        width: 100%;
+        font-size: 13px;
+        margin-left: -1% !important;
+    }
+}

@@ -1,0 +1,530 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Goldman&family=Poppins:wght@200&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #e6f0f3;
+  background-image: url(bg.png) !important;
+  backdrop-filter: blur(5px);
+  background-blend-mode: hue !important;
+  background-blend-mode: multiply !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 50% !important;
+  background-attachment: fixed !important;
+}
+
+body::after {
+  display: block;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  width: 100%;
+  height: 700px;
+}
+
+.Dashboard {
+  display: grid;
+  grid-template-areas:
+    "sidebar header header"
+    "sidebar main main"
+    "sidebar main main";
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 200px 1fr;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  top: 0;
+  left: 0;
+}
+.dashboardNav {
+  grid-area: header;
+}
+.MiddleContent {
+  grid-area: main;
+  overflow-y: scroll;
+  padding: 40px;
+}
+
+.DashboardSideNav {
+  background-color: pink;
+  /* width: 150px; */
+  overflow: hidden;
+  color: pink;
+  height: 100%;
+  /* position: fixed; */
+  left: 0;
+  top: 0;
+  z-index: 39394;
+}
+
+.DashboardSideNav ul {
+  padding: 0 10px;
+}
+
+.sidebarIcon {
+  color: white;
+  margin-right: 10px;
+}
+
+.DashboardSideNav li {
+  padding: 5px;
+  display: flex;
+  width: 100%;
+  font-size: 13px;
+}
+
+.DashboardSideNav li a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 0px;
+}
+
+.DashboardSideNav li img {
+  height: 35px;
+}
+
+.DashboardLogo {
+  width: 40%;
+  margin: 20px auto;
+  padding: 5px;
+}
+
+.DashboardBottomlist {
+  position: absolute;
+  bottom: 70px;
+}
+
+/*Static Header style*/
+.staticHeader {
+  /* width: 85%; */
+  /* position: fixed; */
+  right: 0;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  /* z-index: 333; */
+  background-color: #e6f0f3;
+}
+
+.Search {
+  height: 54px;
+  background-color: #e6f0f3;
+  display: flex;
+  padding: 5px;
+  border-radius: 10px;
+  width: 377px;
+}
+
+.Title {
+  font-size: 33px;
+  font-family: "Poppins", sans-serif;
+}
+
+.Search input {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+}
+
+.searchIcon {
+  color: #accedb;
+  margin-top: 13px;
+  margin-right: 5px;
+}
+
+.GroupSearchLoginUser {
+  display: flex;
+  width: 65%;
+  justify-content: space-around;
+}
+
+.staticHeaderJustifyItems {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/*end header*/
+/*start invesment style*/
+
+.InvesmentProfiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(80px, 1fr));
+  gap: 20px;
+}
+
+.wideProfile h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #83b5c8;
+}
+
+.wideProfile {
+  background-color: #054761;
+  border-radius: 10px;
+  height: 215px;
+  color: white;
+  padding: 10px 30px;
+}
+
+.manyProfile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.groupActive {
+  color: #cde1e9;
+}
+
+.narrowgroup,
+.widegroup {
+  background-color: #cde1e9;
+  border-radius: 10px;
+  padding: 10px 30px;
+}
+
+/* Items */
+.MiningPlanCnt {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background: #054761;
+  min-width: 200px;
+  flex-grow: 1;
+  /* width: 100%; */
+  margin-right: 1%;
+  padding: 5px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.MiningPlanCnt h3 {
+  color: white;
+}
+
+/* .widegroup {} */
+
+.narrowgroup {
+  font-size: 16px;
+}
+
+.ProfileStatus {
+  background-color: #06597a;
+  border-radius: 10px;
+  padding: 10px 30px;
+  color: #83b5c8;
+  margin-bottom: 20px;
+  /* CDE1E9 */
+}
+
+.groupTwo,
+.TowProfile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.groupSectionCnt {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.groupSectionCnt h4 {
+  font-size: 1.2rem;
+}
+
+/*aasset css*/
+
+.AssetsLists {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-right: 5%;
+}
+
+.AssetsLists .assetItem {
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.assetItem {
+  width: 30%;
+  margin-right: 10px;
+  border: 1px solid rebeccapurple;
+}
+
+/*Transaction History*/
+
+.TableContainer {
+  background-color: #022431 !important;
+  color: white !important;
+  border-radius: 10px !important;
+  margin-top: 5rem;
+}
+
+th,
+td {
+  color: white !important;
+}
+
+.TableBody p,
+.TableBody button {
+  color: white !important;
+}
+
+/* End of transaction history */
+
+/*Withdrawal */
+.MainShowcase h2 {
+  font-size: 17px;
+  text-align: justify;
+}
+
+.MainShowcase p {
+  font-size: 11px;
+  text-align: justify;
+  color: white;
+}
+
+.MainShowcase form {
+  width: 100%;
+}
+
+.Mainshowgrp {
+  width: 90%;
+  height: 80%;
+}
+
+.Mainshowgrp label {
+  display: block;
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+.Mainshowgrp form div {
+  width: 100%;
+}
+
+.Mainshowgrp select {
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+  outline: 0;
+  border: 0;
+  margin-bottom: 10px;
+}
+
+.btn-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-form .cBtn {
+  border: 0;
+  outline: 0;
+  background-color: #01151d;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.Mainshowgrp input {
+  width: 100% !important;
+  padding: 5px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.MainShowcase {
+  border-radius: 10px;
+  background-color: #06597ad5;
+  padding: 20px;
+  /* height: 500px; */
+  color: white;
+}
+
+/* Deposit page*/
+
+.TopContainer {
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #accedb;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.TopContainerList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.BottomContainerList {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.plansItem {
+  background-color: #076b92;
+  border-radius: 10px;
+  padding: 20px;
+  height: 150px;
+}
+
+.alert-showcase {
+  border-radius: 10px;
+  background-color: #accedb;
+  padding: 20px;
+  text-align: center;
+  margin-top: 10%;
+}
+
+.MiningPlan {
+  display: flex;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.MiningPlan img {
+  width: 162px;
+  height: 128px;
+}
+
+@media screen and (max-width: 1023px) {
+  .InvesmentProfiles {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/*Mobile view */
+
+@media screen and (max-width: 768px) {
+  .Title {
+    font-size: 20px;
+  }
+
+  .DashboardSideNav li {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .InvesmentProfiles {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .groupSectionCnt {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .wideProfile,
+  .manyProfile,
+  .TowProfile,
+  .AssetsLists,
+  .assetItem,
+  .BottomContainerList,
+  .TopContainer,
+  .plansItem {
+    width: 100%;
+    margin-bottom: 15px !important;
+    display: block;
+  }
+
+  .BottomContainerList {
+    margin-bottom: 15px !important;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Title {
+    font-size: 20px;
+  }
+
+  .groupSectionCnt {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .wideProfile,
+  .manyProfile,
+  .TowProfile,
+  .AssetsLists,
+  .assetItem,
+  .BottomContainerList,
+  .TopContainer {
+    width: 100%;
+    margin-bottom: 15px !important;
+    display: block;
+  }
+
+  .Dashboard {
+    display: grid;
+    grid-template-areas:
+      "sidebar header header"
+      "sidebar main main"
+      "sidebar main main";
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: 150px 1fr;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    top: 0;
+    left: 0;
+  }
+  .dashboardNav {
+    grid-area: header;
+  }
+  .MiddleContent {
+    grid-area: main;
+    overflow-y: scroll;
+    padding: 15px;
+  }
+
+  .DashboardLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .DashboardLogo img {
+    width: auto;
+    height: 30px;
+  }
+
+  .DashboardSideNav li a span,
+  .DashboardBottomlist li a span {
+    font-size: 12px;
+  }
+
+  .GroupSearchLoginUser {
+    display: none;
+  }
+}

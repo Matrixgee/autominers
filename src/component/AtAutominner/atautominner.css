@@ -1,0 +1,26 @@
+.atautominnerCnt {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+}
+
+.Atautominner {
+    display: flex;
+    padding: 20px;
+    margin-top: -20px;
+    background-image: url(imgs/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: lighten;
+    /* background-size: contain; */
+    height: 678px;
+}
+
+.Atautominner h1,
+.Atautominner h3,
+.Atautominner h2 {
+    font-family: 'Goldman';
+    color: #3084A4;
+}

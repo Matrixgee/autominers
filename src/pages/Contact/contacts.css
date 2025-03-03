@@ -1,0 +1,151 @@
+.contact-header {
+  background: #022431;
+  border-radius: 16px;
+  padding: 2rem 0;
+  margin-bottom: 40px;
+}
+
+.contact-header h1 {
+  font-family: "Goldman", cursive;
+  font-size: 64px;
+  color: #cde1e9;
+  text-align: center;
+}
+
+.contact-header p {
+  color: #fff;
+  font-family: "poppins", sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+.contact-body {
+  background: #f4fafce6;
+  border-radius: 16px;
+  padding: 3rem 5rem;
+}
+
+.contact-body h2 {
+  color: #1b1b1b;
+  text-align: justify;
+  font-family: "Goldman", cursive;
+  font-size: 24px;
+}
+
+.address-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #3084a4cc;
+  border-bottom: 1px solid #3084a4cc;
+  padding: 1rem 0;
+}
+.address-details p {
+  color: #1b1b1b;
+  font-family: "poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.contact-btn {
+  background-color: #83b5c8;
+  color: #06597a;
+  border: none;
+  width: 10%;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "poppin", sans-serif;
+}
+
+
+.phone-details, .mail-details {
+  display: flex;
+  justify-content:flex-start;
+  margin-top: 1rem;
+}
+
+.phone-details p, .mail-details p {
+  color: #076B92;
+  font-size: 16px;
+  font-family: "poppin", sans-serif;
+  font-weight: 400;
+  margin-left: 2rem;
+}
+
+
+.socials{
+  display: flex;
+  gap: 10px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-header {
+    width: 100%;
+    background: #022431;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    padding: 2rem 0;
+  }
+  
+  .contact-header h1 {
+    font-size: 50px;
+  }
+  
+    
+  .contact-body h2 {
+    font-size: 20px;
+  }
+  
+  .address-details p {
+    font-size: 14px;
+  }
+  
+  .contact-btn {
+    background-color: #83b5c8;
+    color: #06597a;
+    border: none;
+    width: 20%;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "poppin", sans-serif;
+  }
+  
+  
+  .phone-details p, .mail-details p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-header {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+  
+  .contact-header h1 {
+    font-size: 30px;
+  }
+  
+  .contact-body {
+    width: 100%;
+    padding: 3rem 2rem;
+
+  }
+  .contact-body h2 {
+    font-size: 20px;
+  }
+  
+  .address-details p {
+    font-size: 12px;
+  }
+  
+  .contact-btn {
+    display: none;
+  }
+  
+  
+  .phone-details p, .mail-details p {
+    font-size: 12px;
+  }
+}

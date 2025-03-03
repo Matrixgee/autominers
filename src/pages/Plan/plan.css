@@ -1,0 +1,313 @@
+.plan-hero-section {
+  background-color: rgba(48, 132, 164, 0.8);
+  background-image: url(../../pages/img/minerimg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+
+}
+
+/* popup*/
+
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #0435497a;
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.popoff {
+  display: none;
+}
+
+
+.twoimg {
+  vertical-align: center;
+  width: 30%;
+}
+
+/* background: linear-gradient(0deg,
+      rgba(48, 132, 164, 0.8) 0%,
+      rgba(48, 132, 164, 0.8) 100%),
+    url(../../pages/img/minerimg.png), lightgray 50% / cover ; */
+
+.plan-text-div {
+  width: 80%;
+  margin: 0 auto;
+  padding: 8rem 0;
+  line-height: 1.1;
+}
+
+.plan-text-div h2 {
+  font-family: "Goldman", cursive;
+  font-size: 48px;
+  color: #cde1e9;
+  text-align: center;
+  padding: 1rem;
+}
+
+.plan-text-div p {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: #cde1e9;
+  text-align: center;
+}
+
+.plan-section-btn {
+  color: #accedb;
+  border: 1px solid #accedb;
+  font-family: "Goldman", cursive;
+  font-size: 20px;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 0.5rem 2rem;
+  margin: 0 auto;
+  display: block;
+}
+
+.select-plan {
+  background-color: #f4fafc;
+  padding: 1rem;
+}
+
+.select-plan h2 {
+  font-family: "Goldman", cursive;
+  font-size: 48px;
+  color: #000;
+  text-align: center;
+}
+
+.about-plans {
+  background-color: #043649;
+  padding: 20px;
+}
+
+.twoItem {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  margin: 20px auto;
+}
+
+.secondtwo h3 {
+  font-family: "Goldman", cursive;
+  font-size: 30px;
+  color: #accedb;
+}
+
+.secondtwo p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #cde1e9;
+}
+
+.start-mining-btn {
+  color: #83b5c8;
+  border: 1px solid #83b5c8;
+  font-family: "Goldman", cursive;
+  font-size: 20px;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 0.5rem 2rem;
+}
+
+.know-about-btc {
+  background-color: #f4fafc;
+  display: flex;
+  justify-content: center;
+}
+
+.know-about-btc h2 {
+  font-family: "Goldman", cursive;
+  font-size: 48px;
+  color: #1b1b1b;
+}
+
+.know-about-btc p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #1b1b1b;
+}
+
+.middleSession {
+  padding: 5rem 5rem;
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .plan-text-div {
+    width: 70%;
+    margin: 0 auto;
+    padding: 8rem 0;
+  }
+
+  .plan-text-div h2 {
+    font-family: "Goldman", cursive;
+    font-size: 35px;
+  }
+
+  .select-plan {
+    background-color: #f4fafc;
+    padding: 12px;
+  }
+
+  .select-plan h2 {
+    font-family: "Goldman", cursive;
+    font-size: 35px;
+    color: #000;
+    text-align: center;
+  }
+
+  .twoItem {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .secondtwo h3 {
+    font-family: "Goldman", cursive;
+    font-size: 30px;
+    color: #accedb;
+  }
+
+  .secondtwo p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #cde1e9;
+  }
+
+  .know-about-btc {
+    background-color: #f4fafc;
+    display: flex;
+    justify-content: center;
+  }
+
+  .know-about-btc img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .know-about-btc h2 {
+    font-family: "Goldman", cursive;
+    font-size: 35px;
+    color: #1b1b1b;
+  }
+
+  .middleSession {
+    padding: 5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .plan-text-div {
+    width: 80%;
+    margin: 0 auto;
+    padding: 8rem 0;
+  }
+
+  .plan-text-div h2 {
+    font-family: "Goldman", cursive;
+    font-size: 30px;
+  }
+
+  .plan-text-div p {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    color: #cde1e9;
+    text-align: center;
+  }
+
+  .plan-section-btn {
+    font-size: 16px;
+  }
+
+  .select-plan {
+    background-color: #f4fafc;
+    padding: 1rem;
+  }
+
+  .select-plan h2 {
+    font-family: "Goldman", cursive;
+    font-size: 30px;
+  }
+
+  .about-plans {
+    background-color: #043649;
+  }
+
+
+
+
+  .twoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .twoItem img {
+    order: 1;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .secondtwo {
+    order: 2;
+  }
+
+  .secondtwo h3 {
+    font-family: "Goldman", cursive;
+    font-size: 30px;
+    color: #accedb;
+  }
+
+  .secondtwo p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #cde1e9;
+  }
+
+  .start-mining-btn {
+    font-size: 16px;
+  }
+
+  .know-about-btc {
+    background-color: #f4fafc;
+    display: flex;
+    justify-content: center;
+  }
+
+  .know-about-btc img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .know-about-btc h2 {
+    font-family: "Goldman", cursive;
+    font-size: 30px;
+    color: #1b1b1b;
+  }
+
+  .know-about-btc p {
+    font-size: 16px;
+    color: #1b1b1b;
+  }
+
+  .middleSession {
+    padding: 5rem 2rem;
+  }
+}

@@ -1,0 +1,123 @@
+.App {
+    font-family: sans-serif;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-input {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.code-label {
+    margin-bottom: 16px;
+}
+
+.code-inputs {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.code-inputs input {
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-align: center;
+    height: 60px;
+    width: 40px;
+    border-radius: 10px;
+    margin: 0 4px;
+    border: 2px solid #4f5b66;
+    font-size: 38px;
+}
+
+.code-inputs input:focus {
+    outline: none;
+}
+
+.code-inputs input:nth-child(3n) {
+    margin-right: 24px;
+}
+
+
+.otp-container {
+    background-color: #E6F0F3;
+}
+
+.inner-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.otp-container img {
+    margin: 2rem;
+}
+
+.otp-container h1 {
+    text-align: center;
+    font-family: "Goldman", cursive;
+    font-size: 48px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 10rem;
+}
+
+.otp-subtext {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+
+.resend {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+
+.otp-container p span {
+    color: #3084A4;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 5rem auto;
+}
+
+.input-field {
+    width: 50px;
+    background-color: #CDE1E9;
+    border-radius: 12px;
+    border: 1px solid #CDE1E9;
+    padding: 1rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .otp-container h1 {
+        font-size: 25px;
+    }
+
+    .otp-subtext {
+        font-size: 15px;
+    }
+
+    .input-container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 5rem auto;
+    }
+}

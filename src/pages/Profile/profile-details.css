@@ -1,0 +1,186 @@
+.profile-container {
+    width: 738px;
+    margin: -5rem auto;
+}
+
+.profile-image-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    bottom: -5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.profile-image {
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+}
+
+.header {
+    width: 738px;
+    background: #022431;
+    border-radius: 16px;
+    padding: 4rem 0 2rem;
+}
+
+.header h4 {
+    font-family: 'Goldman', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.header p {
+    color: #ffffff;
+    font-family: "poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: center;
+}
+
+.profile-data,
+.security,
+.about-autominer {
+    width: 738px;
+    background: #022431;
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 0;
+    text-decoration: none;
+}
+
+.links:hover {
+    background-color: #02161e;
+}
+
+.profile-container h2 {
+    font-family: 'Goldman', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #022431;
+}
+
+.profile-container P {
+    color: #ffffff;
+    font-family: "poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .profile-container {
+        width: 70%;
+        margin: 7rem auto;
+    }
+
+    .profile-image-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-image {
+        width: 70%;
+        height: 70%;
+        margin: 0 auto;
+    }
+
+    .header {
+        width: 100%;
+        background: #022431;
+        border-radius: 16px;
+        padding: 4rem 0 2rem;
+    }
+
+    .header h4 {
+        font-size: 20px;
+        padding-top: 3rem;
+    }
+
+    .header p {
+        font-size: 15px;
+    }
+
+    .profile-data,
+    .security,
+    .about-autominer {
+        width: 100%;
+    }
+
+    .profile-container h2 {
+        font-size: 22px;
+    }
+
+    .profile-container P {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile-container {
+        width: 100%;
+        margin: 7rem auto;
+    }
+
+    .profile-image-container {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        bottom: -3rem;
+    }
+
+    .profile-image {
+        width: 70%;
+        height: 70%;
+        margin: 0 auto;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .header h4 {
+        font-size: 20px;
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    .header p {
+        font-size: 12px;
+    }
+
+    .profile-data,
+    .security,
+    .about-autominer {
+        width: 100%;
+        background: #022431;
+        border-radius: 16px;
+        padding: 2rem;
+    }
+
+    .profile-container h2 {
+        font-size: 20px;
+    }
+
+    .profile-container P {
+        font-size: 15px;
+    }
+
+}

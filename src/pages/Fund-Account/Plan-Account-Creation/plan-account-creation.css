@@ -1,0 +1,170 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.account-creation-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.account-image-container {
+  width: 50%;
+}
+.account-image-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}
+.welcome-container {
+  width: 50%;
+  padding: 30px;
+  background-color: #f4fafc;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.welcome-text-container {
+  margin: 3rem 7rem;
+}
+.welcome-container img {
+ position: absolute;
+ top: 55px;
+ right: 10px;
+}
+.welcome-text-container h1 {
+  font-family: "Goldman", cursive;
+  font-size: 38px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.welcome-text-container h2 {
+  font-family: "Goldman", cursive;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+}
+.welcome-text-container p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+
+#log-in {
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  color: #3084a4;
+  border: 1px solid #3084a4;
+  border-radius: 8px;
+  font-family: "Goldman", cursive;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+#sign-up {
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  background-color: #3084a4;
+  color: #cde1e9;
+  border: 1px solid #3084a4;
+  border-radius: 8px;
+  font-family: "Goldman", cursive;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0.5rem 0;
+  text-align: center;
+  margin: 0 auto;
+}
+.copyright {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .account-creation-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+  .account-image-container img {
+    object-fit: fill;
+  }
+  .welcome-text-container {
+    margin: 5rem 5rem;
+  }
+  .welcome-text-container h1 {
+    font-size: 35px;
+  }
+
+  .welcome-text-container h2 {
+    font-size: 20px;
+  }
+  .welcome-text-container p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+  }
+  #log-in {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+  }
+
+  #sign-up {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .account-creation-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+  }
+  .account-image-container {
+    width: 100%;
+  }
+  .account-image-container img {
+    display: none;
+  }
+  .welcome-container {
+    width: 100%;
+    height: 100vh;
+  }
+  .welcome-container img {
+    position: absolute;
+    top: 55px;
+    right: 10px;
+  }
+  .welcome-text-container {
+    margin: 5rem 2rem;
+  }
+  .welcome-text-container h1 {
+    font-size: 30px;
+  }
+  .welcome-text-container h2 {
+    font-size: 20px;
+  }
+  #log-in {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  #sign-up {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+  }
+}

@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.privacy-policy_body {
+    background: #05476159;
+}
+
+.header_section {
+    background-color: #022431;
+    /* margin: 5rem auto 2rem; */
+    width: 70%;
+    padding: 9rem;
+    border-radius: 16px;
+}
+
+.header-text {
+    font-family: 'Goldman', cursive;
+    font-size: 32px;
+    color: #CDE1E9;
+    text-align: center;
+}
+
+.body-section {
+    background: #f4fafccc;
+    border-radius: 12px;
+    opacity: 0.9;
+    width: 70%;
+    margin: 0 auto;
+    padding: 2rem 5rem;
+}
+
+.effective-date_section h2 {
+    font-family: 'Goldman', cursive;
+    font-size: 24px;
+    color: #054761;
+}
+
+.effective-date_section p {
+    font-family: 'poppins', sans-serif;
+    font-size: 15px;
+    color: #1B1B1B;
+    text-align: justify;
+}
+
+.info-collection_section,
+.tracking-data_section,
+.data-usage_section,
+.security-section,
+.privacy-section,
+.info-section,
+h2 {
+    font-family: 'Goldman', cursive;
+    font-size: 24px;
+    color: #1B1B1B;
+    margin: 2rem 0;
+}
+
+.effective-date_section p,
+.info-collection_section p,
+.tracking-data_section p,
+.data-usage_section p,
+.security-section p,
+.privacy-section p,
+.info-section p {
+    font-family: 'poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #1B1B1B;
+    text-align: justify;
+}
+
+ol {
+    font-family: 'poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #1B1B1B;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .header_section {
+        /* margin: 5rem auto 2rem; */
+        width: 80%;
+        padding: 7rem;
+        border-radius: 16px;
+    }
+
+    .header-text {
+        font-size: 32px;
+    }
+
+    .body-section {
+        width: 80%;
+        margin: 0 auto;
+        padding: 2rem 5rem;
+    }
+
+    .effective-date_section h2 {
+        font-size: 20px;
+    }
+
+    .effective-date_section p {
+        font-size: 12px;
+    }
+
+    .info-collection_section,
+    .tracking-data_section,
+    .data-usage_section,
+    .security-section,
+    .privacy-section,
+    .info-section,
+    h2 {
+        font-size: 20px;
+        margin: 2rem 0;
+    }
+
+    .effective-date_section p,
+    .info-collection_section p,
+    .tracking-data_section p,
+    .data-usage_section p,
+    .security-section p,
+    .privacy-section p,
+    .info-section p {
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    ol {
+        font-family: 'poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        color: #1B1B1B;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .header_section {
+        margin: 5rem auto 2rem;
+        padding: 7rem;
+    }
+
+    .header-text {
+        font-size: 32px;
+
+    }
+
+    .body-section {
+        width: 80%;
+        margin: 0 auto;
+        padding: 2rem 5rem;
+    }
+
+    .effective-date_section h2 {
+        font-size: 15px;
+        color: #054761;
+    }
+
+    .effective-date_section p {
+        font-size: 10px;
+    }
+
+    .info-collection_section,
+    .tracking-data_section,
+    .data-usage_section,
+    .security-section,
+    .privacy-section,
+    .info-section,
+    h2 {
+        font-size: 15px;
+        margin: 2rem 0;
+    }
+
+    .effective-date_section p,
+    .info-collection_section p,
+    .tracking-data_section p,
+    .data-usage_section p,
+    .security-section p,
+    .privacy-section p,
+    .info-section p {
+        font-size: 10px;
+
+    }
+
+    ol {
+        font-family: 'poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        color: #1B1B1B;
+    }
+}

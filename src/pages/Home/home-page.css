@@ -1,0 +1,544 @@
+.hero-section {
+  background: linear-gradient(31deg,
+      rgba(3, 54, 73, 0.7) 77.79%,
+      rgba(3, 54, 73, 0.64) 87.25%,
+      rgba(3, 54, 73, 0) 102.15%),
+    url(../../assets//homepage-banner.jpg);
+}
+
+.text-div {
+  width: 70%;
+  margin: 0 auto;
+  padding: 10rem 0;
+  margin-top: -150px;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-section-headertext {
+  font-family: "Goldman", cursive;
+  font-size: 64px;
+  color: #cde1e9;
+  text-align: center;
+  padding-top: 10rem;
+  padding-bottom: 1rem;
+}
+
+.hero-section p {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: #cde1e9;
+  text-align: center;
+}
+
+.hero-section-btn {
+  color: #accedb;
+  border: 1px solid #accedb;
+  font-family: "Goldman", cursive;
+  font-size: 20px;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.investor {
+  background-color: #E6F0F3;
+  border-radius: 12px;
+  width: 60%;
+  margin: -5rem auto;
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+.join-autominer {
+  background-color: #043649;
+  padding: 5rem 0;
+  margin-top: -5rem;
+}
+
+.join-us-headertext {
+  font-family: "Goldman", cursive;
+  font-size: 48px;
+  color: #5a9cb6;
+  text-align: center;
+}
+
+.join-us-subtext {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: #fcddec;
+  text-align: center;
+}
+
+.join-us-subsection {
+  margin: 2rem 5rem;
+}
+
+.join-us-subsection img {
+  width: 30%;
+}
+
+.subsection-container {
+  display: flex;
+  justify-content: space-around;
+  gap:20px;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.subsection-text-container {
+  width: 400px;
+}
+
+.subsection-container h3 {
+  font-family: "Goldman", cursive;
+  font-size: 24px;
+  color: #3084a4;
+}
+
+.subsection-container p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #accedb;
+}
+
+.at-autominer {
+  background: linear-gradient(0deg,
+      rgba(7, 107, 146, 0.5) 0%,
+      rgba(7, 107, 146, 0.5) 100%),
+    url(../img/minerimg.png), lightgray 50% / cover no-repeat;
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem;
+}
+
+.at-autominer-text-container {
+  margin-right: 5rem;
+}
+
+.at-autominer-headertext {
+  font-family: "Goldman", cursive;
+  font-size: 48px;
+  color: #cde1e9;
+}
+
+.at-autominer p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #e6f0f3;
+}
+
+.at-autominer a.learn-more-btn {
+  color: #accedb;
+  border: 1px solid #accedb;
+  font-family: "Goldman", cursive;
+  font-size: 16px;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 15px 20px;
+}
+
+.why-join-us {
+  background-color: #f4fafc;
+  padding: 5rem;
+}
+
+.section-headertext {
+  color: #000;
+  font-family: "Goldman", cursive;
+  font-size: 24px;
+  text-align: center;
+}
+
+.join-us-subcontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.join-us-subcontainer h4 {
+  text-align: center;
+  color: #054761;
+  font-family: "Goldman", cursive;
+  font-size: 24px;
+  margin: 1rem 0;
+}
+
+.join-us-subcontainer img {
+  display: block;
+  margin: 1rem auto;
+}
+
+.join-us-subcontainer p {
+  color: #1b1b1b;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+.coverage,
+.strong-security,
+.efficient,
+.high-efficiency {
+  width: 300px;
+  margin: 0 1rem;
+}
+
+.reviews {
+  background-color: #accedb;
+  padding: 2rem 7rem;
+}
+
+.reviews h4 {
+  text-align: center;
+  color: #054761;
+  font-family: "Goldman", cursive;
+  font-size: 24px;
+  margin: 1rem 0;
+}
+
+.reviews-content {
+  display: flex;
+  justify-content: center;
+}
+
+.reviews-content-text {
+  width: 50%;
+  margin-right: 5rem;
+}
+
+
+.middle-container {
+  background-color: #f4fafc;
+  padding: 5rem 0;
+}
+
+.FAQ {
+  width: 60%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.FAQ h4 {
+  text-align: center;
+  color: #054761;
+  font-family: "Goldman", cursive;
+  font-size: 24px;
+  /* margin-bottom: 2rem; */
+}
+
+.signup-section {
+  background: url(../img/minerimg.png), lightgray 50% / cover no-repeat;
+  padding: 3rem 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem 7rem;
+}
+
+.sign-up-text {
+  width: 50%;
+}
+
+.signup-section-textheader {
+  font-family: "Goldman", cursive;
+  font-size: 24px;
+  color: #cde1e9;
+}
+
+.signup-section-subtext {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #accedb;
+}
+
+.sign-up-btn {
+  background-color: #3084a4;
+  border: 1px solid #3084a4;
+  border-radius: 8px;
+  color: #cde1e9;
+  font-family: "Goldman", cursive;
+  font-size: 16px;
+  padding: 15px 20px;
+}
+
+.form-section {
+  background: linear-gradient(56deg,
+      rgba(2, 36, 49, 0.9) 17.51%,
+      rgba(3, 53, 73, 0.9) 61.76%,
+      rgba(189, 231, 248, 0) 103.23%),
+    url(../../assets/homepage-banner.jpg), lightgray 50% / cover no-repeat;
+  margin: 2rem 7rem;
+  padding: 2rem 0;
+}
+
+.form-section h2 {
+  color: #e6f0f3;
+  font-family: "Goldman", cursive;
+  font-size: 48px;
+  text-align: center;
+}
+
+.form-section p {
+  color: #e6f0f3;
+  font-family: "Poppin", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.form-details {
+  margin: 0 auto;
+}
+
+.form-details input {
+  width: 60%;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border: 1px solid #076b92;
+  background-color: #e0eef3;
+  margin: 1rem auto;
+}
+
+.form-details textarea {
+  width: 60%;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border: 1px solid #076b92;
+  background-color: #e0eef3;
+  height: 300px;
+  margin: 1rem auto;
+  display: block;
+}
+
+.send-msg-btn {
+  background-color: #3084a4;
+  border: 1px solid #3084a4;
+  border-radius: 8px;
+  color: #cde1e9;
+  font-family: "Goldman", cursive;
+  font-size: 16px;
+  padding: 0.5rem 2rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.view-plans-btn {
+  background-color: #3084a4;
+  border: 1px solid #3084a4;
+  border-radius: 8px;
+  color: #cde1e9;
+  font-family: "Goldman", cursive;
+  font-size: 16px;
+  padding: 15px 20px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-section-headertext {
+    font-family: "Goldman", cursive;
+    font-size: 35px;
+  }
+
+  .investor {
+    background-color: #E6F0F3;
+    border-radius: 12px;
+    width: 70%;
+    margin: -5rem auto;
+    padding: 3rem 2rem;
+    position: relative;
+  }
+
+  .join-us-headertext {
+    font-family: "Goldman", cursive;
+    font-size: 30px;
+  }
+
+  .join-us-subtext {
+    padding: 0 3rem;
+  }
+
+  .join-us-subsection {
+    margin: 2rem 5rem;
+  }
+
+  .subsection-text-container {
+    width: 600px;
+    padding: 0 1rem;
+  }
+
+  .join-autominer img {
+    width: 50%;
+    object-fit: contain;
+  }
+
+  .at-autominer img {
+    width: 50%;
+    object-fit: contain;
+  }
+
+  .signup-section {
+    background: url(../img/minerimg.png), lightgray 50% / cover no-repeat;
+    padding: 3rem;
+  }
+
+  .form-section p {
+    color: #e6f0f3;
+    font-family: "Poppin", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section-headertext {
+    font-family: "Goldman", cursive;
+    font-size: 30px;
+  }
+
+  .investor {
+    background-color: #E6F0F3;
+    border-radius: 12px;
+    width: 90%;
+    margin: -5rem auto;
+    padding: 3rem 2rem;
+    position: relative;
+  }
+
+  .join-us-subsection {
+    margin: 2rem 3rem;
+  }
+
+  .subsection-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:20px;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .subsection-container:nth-child(even) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .subsection-text-container {
+    width: 400px;
+    padding: 2rem 3rem;
+  }
+
+  .at-autominer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+  }
+
+  .at-autominer-text-container {
+    margin-right: 0rem;
+    margin-bottom: 2rem;
+  }
+
+  .at-autominer-headertext {
+    font-size: 25px;
+  }
+
+  .join-us-subcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .join-us-headertext {
+    font-family: "Goldman", cursive;
+    font-size: 30px;
+  }
+
+  .join-us-subtext {
+    padding: 0 2rem;
+  }
+
+  .join-autominer img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .at-autominer img {
+    width: 50%;
+    object-fit: contain;
+  }
+
+  .coverage,
+  .strong-security,
+  .efficient,
+  .high-efficiency {
+    width: 100%;
+    margin: 0rem;
+  }
+
+  .reviews {
+    background-color: #accedb;
+    padding: 2rem 3rem;
+  }
+
+  .reviews-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .reviews-content-text {
+    width: 100%;
+    margin-right: 0rem;
+  }
+
+  .FAQ {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .signup-section {
+    padding: 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 3rem;
+  }
+
+  .sign-up-text {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .form-section {
+    background: linear-gradient(56deg,
+        rgba(2, 36, 49, 0.9) 17.51%,
+        rgba(3, 53, 73, 0.9) 61.76%,
+        rgba(189, 231, 248, 0) 103.23%),
+      url(../../assets/homepage-banner.jpg), lightgray 50% / cover no-repeat;
+    margin: 2rem 3rem;
+    padding: 2rem 0;
+  }
+
+  .form-section h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .form-details input {
+    width: 90%;
+  }
+
+  .form-details textarea {
+    width: 90%;
+  }
+
+}
