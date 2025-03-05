@@ -18,8 +18,7 @@ import WalletIcon from "@mui/icons-material/Wallet";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 import MonitorIcon from "@mui/icons-material/Monitor";
 import PersonIcon from "@mui/icons-material/Person";
-import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
-import SettingsIcon from "@mui/icons-material/Settings";
+
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Link } from "react-router-dom";
 

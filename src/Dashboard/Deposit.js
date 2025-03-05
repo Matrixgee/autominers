@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SideNav from "./SideNav";
 import DashboardHeader from "./header";
 import { ContentCopy } from "@mui/icons-material";
@@ -6,21 +6,47 @@ import { ContentCopy } from "@mui/icons-material";
 import Advance from "./img/advance.png";
 import starter from "./img/starter.png";
 import professional from "./img/professional.png";
+import axios from "axios";
 
 const walletAddresses = {
-  Bitcoin: "bc1qxyz...",
-  Ethereum: "0xabc123...",
-  Dogecoin: "Dxyz123...",
-  Solana: "So123abc...",
+  Bitcoin: "bc1qxc4earx32vkhg2ul0ep4tk94977v5r5j6h7u6a",
+  Ethereum: "0x65b89562C0061bD8abf87D69eBf424a10609E54C",
+  Litecoin: "ltc1q4ks6g7msudvv4z6y4k3gxhvvs76emngp6d267l",
 };
 
 const Deposit = () => {
   const [selectedCrypto, setSelectedCrypto] = useState("Bitcoin");
   const [amount, setAmount] = useState("");
+  const [exchangeRates, setExchangeRates] = useState({
+    Bitcoin: 0,
+    Ethereum: 0,
+    Litecoin: 0,
+  });
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(walletAddresses[selectedCrypto]);
   };
+
+  useEffect(() => {
+    const fetchExchangeRates = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,litecoin&vs_currencies=usd"
+        );
+        setExchangeRates({
+          Bitcoin: response.data.bitcoin.usd,
+          Ethereum: response.data.ethereum.usd,
+          Litecoin: response.data.litecoin.usd,
+        });
+      } catch (error) {
+        console.error("Error fetching exchange rates:", error);
+      }
+    };
+
+    fetchExchangeRates();
+    const interval = setInterval(fetchExchangeRates, 30000); // Update every 30 sec
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="Dashboard">
@@ -43,26 +69,26 @@ const Deposit = () => {
           <div className="BottomContainerList">
             <div className="plansItem">
               <div className="PlanCoinAmount">
-                <h3>0.50BTC</h3>
+                <h3>{exchangeRates.Bitcoin} USD</h3>
               </div>
               <div className="planFooter">
-                <h3>Professional Plans</h3>
+                <h3>Bitcoin Plan</h3>
               </div>
             </div>
             <div className="plansItem">
               <div className="PlanCoinAmount">
-                <h3>0.60BTC</h3>
+                <h3>{exchangeRates.Ethereum} USD</h3>
               </div>
               <div className="planFooter">
-                <h3>Professional Plans</h3>
+                <h3>Ethereum Plan</h3>
               </div>
             </div>
             <div className="plansItem">
               <div className="PlanCoinAmount">
-                <h3>0.70BTC</h3>
+                <h3>{exchangeRates.Litecoin} USD</h3>
               </div>
               <div className="planFooter">
-                <h3>Professional Plans</h3>
+                <h3>Litecoin Plan</h3>
               </div>
             </div>
           </div>
@@ -119,7 +145,7 @@ const Deposit = () => {
             </button>
           </div>
 
-          <div className='DepositformBtn'>
+          <div className="DepositformBtn">
             <button>Proceed to Payment</button>
           </div>
         </div>
