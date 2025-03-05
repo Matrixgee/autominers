@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d635f943.css",
-    "main.js": "/static/js/main.a3c5233e.js",
+    "main.css": "/static/css/main.573e0cc5.css",
+    "main.js": "/static/js/main.c37d8e41.js",
     "static/js/787.9e9f4ffd.chunk.js": "/static/js/787.9e9f4ffd.chunk.js",
     "static/media/mission-bg.png": "/static/media/mission-bg.36594a94756f93ed526b.png",
     "static/media/Weekly webinar.png": "/static/media/Weekly webinar.77c1929560bfaa1545c8.png",
@@ -37,12 +37,12 @@
     "static/media/logoWhite.png": "/static/media/logoWhite.5ca3ab6d241c27db202e.png",
     "static/media/white.png": "/static/media/white.ee60c5afc79ca66dc776.png",
     "index.html": "/index.html",
-    "main.d635f943.css.map": "/static/css/main.d635f943.css.map",
-    "main.a3c5233e.js.map": "/static/js/main.a3c5233e.js.map",
+    "main.573e0cc5.css.map": "/static/css/main.573e0cc5.css.map",
+    "main.c37d8e41.js.map": "/static/js/main.c37d8e41.js.map",
     "787.9e9f4ffd.chunk.js.map": "/static/js/787.9e9f4ffd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d635f943.css",
-    "static/js/main.a3c5233e.js"
+    "static/css/main.573e0cc5.css",
+    "static/js/main.c37d8e41.js"
   ]
 }
