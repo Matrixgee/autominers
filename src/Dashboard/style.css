@@ -57,7 +57,7 @@ body::after {
 }
 
 .DashboardSideNav {
-  background-color: pink;
+  background-color: #054761;
   /* width: 150px; */
   overflow: hidden;
   color: pink;
@@ -116,7 +116,8 @@ body::after {
   align-items: center;
   height: 80px;
   /* z-index: 333; */
-  background-color: #e6f0f3;
+  /* background-color: #e6f0f3; */
+  background: red;
 }
 
 .Search {
