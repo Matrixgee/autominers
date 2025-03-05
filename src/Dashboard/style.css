@@ -60,7 +60,6 @@ body::after {
   background-color: #054761;
   /* width: 150px; */
   overflow: hidden;
-  color: pink;
   height: 100%;
   /* position: fixed; */
   left: 0;
@@ -117,7 +116,6 @@ body::after {
   height: 80px;
   /* z-index: 333; */
   /* background-color: #e6f0f3; */
-  background: red;
 }
 
 .Search {
