@@ -2,21 +2,19 @@ import React from "react";
 import SideNav from "./SideNav";
 import DashboardHeader from "./header";
 
-
 const Settings = () => {
-   return(
+  return (
     <div className="Dashboard">
-     <div className="sidebar">
+      <div className="sidebar">
         <SideNav />
+      </div>
+
+      <div className="dashboardNav">
+        <DashboardHeader title="OverView" LoginUser="" />
+      </div>
+
+      <div className="MiddleContent"></div>
     </div>
-
-    <div className="dashboardNav">
-    <DashboardHeader title="OverView"  LoginUser="Cyber User" />
-    </div>
-
-     <div className="MiddleContent"></div>
-     </div>
-     );
-
-     }
-     export default Settings;
+  );
+};
+export default Settings;

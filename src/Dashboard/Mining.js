@@ -7,19 +7,18 @@ import DashboardHeader from "./header";
 // import professional from './img/professional.png';
 
 const Monitor = () => {
-   return(
+  return (
     <div className="Dashboard">
-     <div className="sidebar">
+      <div className="sidebar">
         <SideNav />
+      </div>
+
+      <div className="dashboardNav">
+        <DashboardHeader title="OverView" LoginUser="" />
+      </div>
+
+      <div className="MiddleContent"></div>
     </div>
-
-    <div className="dashboardNav">
-    <DashboardHeader title="OverView"  LoginUser="Cyber User" />
-    </div>
-
-     <div className="MiddleContent"></div>
-     </div>
-     );
-
-     }
-     export default Monitor;
+  );
+};
+export default Monitor;
