@@ -1,113 +1,123 @@
-import './signup.css'
-import logo from './img/full-logo.png';
-import signupImg from './img/signupbg.png';
-import whiteLogo from '../assets/logos/AutoMiner/LogoFile/logoWhite.png';
-import SignupForm from './SignupForm'
-import { useState } from 'react';
+import "./signup.css";
+import logo from "./img/full-logo.png";
+import signupImg from "./img/signupbg.png";
+
+import SignupForm from "./SignupForm";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import md5  from "md5";
-import cookies from 'js-cookie';
+import md5 from "md5";
+import cookies from "js-cookie";
+import toast from "react-hot-toast";
 
 const Signup = () => {
-  const [fname, setFName] = useState('');
-  const [lname, setLastName] = useState('');
-  const [Email, setEmail] = useState('');
+  const [fname, setFName] = useState("");
+  const [lname, setLastName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [loading, setloading] = useState(false);
 
-  const [userN, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [userN, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [Error, setError] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [Error, setError] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [hasError, setHasError] = useState(false);
-  const [success,setSuccess] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [checked, setChecked] = useState(true);
 
   const handleChecked = () => {
     setChecked(!checked);
-  }
+  };
 
   const data = {
     firstname: fname,
     lastname: lname,
     email: Email,
     username: userN,
-    password: password
-}
-const navagation = useNavigate();
+    password: password,
+  };
+  const navagation = useNavigate();
 
-const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-try{
-        const response =  await fetch('http://localhost:5427/api/auth/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        }); 
-        const dataResp = await response.json();
-        if ( (!response.status === 200) | (!response.status ===201))  {
-            throw (`an error occured`);
-        };
-        if (!response.ok) throw new Error(dataResp.message)
-        if (response.status === 400) throw (dataResp.message);
-        const DataHash = md5(userN);
-        const codeDir = `/account-verification/?'${DataHash}`;
-        setSuccess(true)
-      cookies.set('access_token',dataResp.accessToken)
-        console.log(codeDir)
-        navagation(codeDir);
+    setloading(true);
+    const toastingloadingId = toast.loading("Please wait....");
+    try {
+      const response = await fetch(
+        ` https://autominner-backend.onrender.com/api/auth/register`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      const dataResp = await response.json();
+      if ((!response.status === 200) | (!response.status === 201)) {
+        throw new Error("an error occurred");
+      }
+      if (!response.ok) throw new Error(dataResp.message);
+      if (response.status === 400) throw dataResp.message;
+      const DataHash = md5(userN);
+      const codeDir = `/account-verification/?'${DataHash}`;
+      setSuccess(true);
 
-      
-    }catch(err)  {
-        console.log(err);
-        setError(err);
-        setHasError(true);
-        setSuccess(false)
+      toast.success("Registration successful, please verify your email");
+      cookies.set("access_token", dataResp.accessToken);
+      console.log(codeDir);
+      navagation(codeDir);
+    } catch (err) {
+      console.log(err);
+      setError(err.message || "An unexpected error occurred");
+      toast.error(err.message || "An unexpected error occurred");
+      setHasError(true);
+      setSuccess(false);
+    } finally {
+      setloading(false);
+      toast.dismiss(toastingloadingId);
     }
-        
-}
-const PasswordMatch = () =>{
+  };
+  const PasswordMatch = () => {
     if (password !== confirmPassword) {
-        setHasError(true);
-        setError('Password mismatched');
-      }
-      if (password === confirmPassword) {
-        setError('')
-        setHasError(false);
-      }
-}
+      setHasError(true);
+      setError("Password mismatched");
+    }
+    if (password === confirmPassword) {
+      setError("");
+      setHasError(false);
+    }
+  };
   const handlecPassword = (pValue) => {
     //  if (!pValue)  return;
     setConfirmPassword(pValue);
-  }
+  };
 
   const handleFirstName = (fValue) => {
     // if(!fValue) return;
-    setFName(fValue)
-  }
+    setFName(fValue);
+  };
   const handleLastName = (LValue) => {
     //  if(!LValue) return;
-    setLastName(LValue)
-  }
+    setLastName(LValue);
+  };
   const handlePassword = (PsValue) => {
     // if (!PsValue) return
-    setPassword(PsValue)
-  }
+    setPassword(PsValue);
+  };
   const handleUsername = (uValue) => {
     // if (!uValue) return
-    setUsername(uValue)
-  }
+    setUsername(uValue);
+  };
   const handleEmail = (eValue) => {
     // if (!eValue) return
-    setEmail(eValue)
-  }
+    setEmail(eValue);
+  };
 
   return (
     <div>
       <div className="signup_container">
-        <div className='login-logo'>
-          <img src={logo} className='' alt='' />
+        <div className="login-logo">
+          <img src={logo} className="" alt="" />
         </div>
         <div className="form_container">
           <div className="left">
@@ -134,11 +144,11 @@ const PasswordMatch = () =>{
               </p>
               {hasError && (
                 <ul className="Error_cnt">
-                  <li>{Error}</li>  
+                  <li>{Error}</li>
                 </ul>
-              )  }
-              
-            {success && (
+              )}
+
+              {success && (
                 <ul className="Success_cnt">
                   <li>Success</li>
                 </ul>
@@ -162,13 +172,14 @@ const PasswordMatch = () =>{
                 handleChecked={handleChecked}
                 handleSubmit={handleSubmit}
                 PasswordMatch={PasswordMatch}
+                loading={loading}
               />
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;
