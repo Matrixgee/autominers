@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
-import './VerificationCode.css';
+import "./VerificationCode.css";
 import { useNavigate } from "react-router-dom";
 const VerificationCode = ({ length, label, loading, onComplete }) => {
   const [code, setCode] = useState([...Array(length)].map(() => ""));
-  const[incorrect,setIncorrect] = useState(false);
+  const [incorrect, setIncorrect] = useState(false);
   const inputs = useRef([]);
   const navagation = useNavigate();
   const handleSubmit = async (e) => {
@@ -13,26 +13,29 @@ const VerificationCode = ({ length, label, loading, onComplete }) => {
       const otpNumber = parseInt(otpString, 10);
 
       const userDataWithOtp = { otp: otpNumber };
-      console.log(`data sending is ${userDataWithOtp.otp}`)
-      const response = fetch('http://localhost:5427/api/auth/verify-otp', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(userDataWithOtp)
-      })
+      console.log(`data sending is ${userDataWithOtp.otp}`);
+      const response = fetch(
+        "https://autominner-backend.onrender.com/api/auth/verify-otp",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userDataWithOtp),
+        }
+      );
       const dataResp = (await response).statusText;
-      if ( (!response.status === 200) | (!response.status ===201))  {
-          throw (dataResp);
-      };
-     const codeDir = '/account/deposit';
-     setIncorrect(false);
+      if ((!response.status === 200) | (!response.status === 201)) {
+        throw dataResp;
+      }
+      const codeDir = "/account/deposit";
+      setIncorrect(false);
       navagation(codeDir);
-      if (response.status === 400) throw (dataResp);
+      if (response.status === 400) throw dataResp;
     } catch (error) {
       setIncorrect(true);
     }
-  }
+  };
 
   const processInput = (e, slot) => {
     const num = e.target.value;
@@ -43,7 +46,7 @@ const VerificationCode = ({ length, label, loading, onComplete }) => {
     if (slot !== length - 1) {
       inputs.current[slot + 1].focus();
     }
-    if (newCode.every(num => num !== "")) {
+    if (newCode.every((num) => num !== "")) {
       onComplete(newCode.join(""));
     }
   };
@@ -56,9 +59,7 @@ const VerificationCode = ({ length, label, loading, onComplete }) => {
       inputs.current[slot - 1].focus();
     }
   };
-  const handleVerify = () => {
-
-  }
+  const handleVerify = () => {};
 
   return (
     <form className="code-input" onSubmit={(e) => handleSubmit(e)}>
@@ -69,22 +70,24 @@ const VerificationCode = ({ length, label, loading, onComplete }) => {
             <input
               key={idx}
               type="text"
-              style={{borderColor: incorrect? 'red': null}}
+              style={{ borderColor: incorrect ? "red" : null }}
               inputMode="numeric"
               maxLength={1}
               value={num}
               autoFocus={!code[0].length && idx === 0}
               readOnly={loading}
-              onChange={e => processInput(e, idx)}
-              onKeyUp={e => onKeyUp(e, idx)}
-              ref={ref => inputs.current.push(ref)}
-              className={!true? 'error': 'success'} // success and error class
+              onChange={(e) => processInput(e, idx)}
+              onKeyUp={(e) => onKeyUp(e, idx)}
+              ref={(ref) => inputs.current.push(ref)}
+              className={!true ? "error" : "success"} // success and error class
             />
           );
         })}
-        
       </div>
-      <button onClick={handleVerify} className="btn verify-btn"> Verify</button>
+      <button onClick={handleVerify} className="btn verify-btn">
+        {" "}
+        Verify
+      </button>
     </form>
   );
 };

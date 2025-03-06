@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DashLogo from "./dashboardLogo.png";
 import "./style.css";
 
@@ -18,7 +18,7 @@ import WalletIcon from "@mui/icons-material/Wallet";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 import MonitorIcon from "@mui/icons-material/Monitor";
 import PersonIcon from "@mui/icons-material/Person";
-
+import { IoMdMenu } from "react-icons/io";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Link } from "react-router-dom";
 
@@ -26,8 +26,24 @@ const SideNav = () => {
   const handleLogOut = () => {
     cookies.remove("access_token");
   };
+
+  const [Toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!Toggle);
+    console.log(Toggle);
+  };
+
   return (
-    <div className="DashboardSideNav">
+    <div className={`DashboardSideNav ${Toggle ? "open" : "closed"}`}>
+      <div className="menuIconCnt">
+        <IoMdMenu
+          className="menuIcon"
+          size={20}
+          color="white"
+          onClick={handleToggle}
+        />
+      </div>
       <div className="DashboardLogo">
         <img src={DashLogo} alt="Dashboard Logo" />
       </div>
