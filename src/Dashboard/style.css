@@ -58,13 +58,24 @@ body::after {
 
 .DashboardSideNav {
   background-color: #054761;
-  /* width: 150px; */
-  overflow: hidden;
-  height: 100%;
-  /* position: fixed; */
-  left: 0;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: -250px; /* Initially hidden */
   top: 0;
-  z-index: 39394;
+  z-index: 1000;
+  transition: left 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* When sidebar is open */
+.DashboardSideNav.open {
+  left: 0;
+}
+
+/* When sidebar is closed */
+.DashboardSideNav.closed {
+  left: -250px;
 }
 
 .DashboardSideNav ul {
@@ -596,6 +607,24 @@ td {
   .DashboardLogo img {
     width: auto;
     height: 30px;
+  }
+
+  .menuIconCnt {
+    width: 100%;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    z-index: 1100;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 7px 7px 7px 7px;
+  }
+
+  .menuIcon {
+    font-size: 30px;
+    color: white;
   }
 
   .DashboardSideNav li a span,
