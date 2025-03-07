@@ -358,4 +358,11 @@ p {
     justify-content: center;
     align-items: center;
   }
+  .FlexDisplay {
+    background: green;
+  }
+  .FlexDisplay input {
+    background: purple;
+    width: 20%;
+  }
 }
