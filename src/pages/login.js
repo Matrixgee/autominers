@@ -7,10 +7,13 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Link, useNavigate } from "react-router-dom";
 import cookies from "js-cookie";
+import toast from "react-hot-toast";
 
 const Login = () => {
-  const navagation = useNavigate();
+  const navigate = useNavigate(); // ✅ Fixed spelling
   const pasRef = useRef();
+  console.log(pasRef);
+
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -19,19 +22,23 @@ const Login = () => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-
   const [visible, setVisibility] = useState(false);
+
+  // ✅ Fix: Log event value instead of state (since state updates asynchronously)
   const handleDetails = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-    console.log(data);
+    setData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    console.log(`${e.target.name}: ${e.target.value}`);
   };
+
   const showPassword = () => {
     setVisibility((prev) => !prev);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const toastLoadingId = toast.loading("Please wait...");
     setLoading(true);
+
     try {
       const response = await fetch(
         "https://autominner-backend.onrender.com/api/auth/login",
@@ -43,19 +50,35 @@ const Login = () => {
           body: JSON.stringify(data),
         }
       );
+
       const dataResp = await response.json();
-      // if (!response.ok) throw new Error(dataResp.message)
+
+      // ✅ Fix: Check for successful response
+      if (!response.ok) {
+        throw new Error(dataResp.message || "Invalid login details");
+      }
+
+      // ✅ Fix: Ensure accessToken exists before setting it
+      if (!dataResp.accessToken) {
+        throw new Error("Authentication failed, please try again.");
+      }
+
       cookies.set("access_token", dataResp.accessToken);
       setSuccess(true);
+      toast.success("Login successful");
       setError(false);
-      navagation("/account/dashboard");
+
+      // ✅ Fix: Correct navigation function name
+      navigate("/account/dashboard");
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setSuccess(false);
       setError(true);
-      setMessage("Invalid login details");
+      setMessage(error.message);
+      toast.error(error.message || "An unexpected error occurred");
     } finally {
       setLoading(false);
+      toast.dismiss(toastLoadingId);
     }
   };
 
@@ -114,7 +137,7 @@ const Login = () => {
                     className="btn btn-primary"
                     onClick={(e) => handleSubmit(e)}
                   >
-                    Login
+                    {loading ? "Loading..." : "Login"}
                   </button>
                   <button className="btn btn-white">
                     <i className="fa fa-google icon" aria-hidden="true"></i>Sign

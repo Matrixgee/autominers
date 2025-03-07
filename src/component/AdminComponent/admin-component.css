@@ -1,15 +1,15 @@
-.container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    padding: 1rem;
-    width: 100%;
-    border: 3px solid #E6F0F3;
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 100%;
+  border: 3px solid #e6f0f3;
 }
-.container p{
-    margin: auto 0;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+.container p {
+  margin: auto 0;
+  color: red;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
 }

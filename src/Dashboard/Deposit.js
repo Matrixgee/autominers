@@ -138,7 +138,6 @@ const Deposit = () => {
           />
 
           <div className="WalletAddress">
-            <p>Wallet Address for {selectedCrypto}:</p>
             <span>{walletAddresses[selectedCrypto]}</span>
             <button className="CopyButton" onClick={copyToClipboard}>
               <ContentCopy fontSize="small" /> Copy

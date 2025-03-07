@@ -283,12 +283,21 @@ input {
 
 .WalletAddress {
   margin-top: 15px;
-  padding: 10px;
+  padding: 25px;
   background: #f4f4f4;
   border-radius: 4px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
   align-items: center;
+  flex-direction: column;
+}
+
+.WalletAddress span {
+  background: #022431;
+  color: gainsboro;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .CopyButton {
@@ -616,7 +625,16 @@ td {
     display: none;
   }
   .WalletAddress {
-    height: 20rem;
+    height: 10rem;
     flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 40px;
+  }
+  .WalletAddress span {
+    font-size: 8px;
+    background: #022431;
+    padding: 9px;
+    color: gainsboro;
   }
 }
