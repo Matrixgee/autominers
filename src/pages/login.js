@@ -53,6 +53,8 @@ const Login = () => {
 
       const dataResp = await response.json();
 
+      console.log(dataResp);
+
       // ✅ Fix: Check for successful response
       if (!response.ok) {
         throw new Error(dataResp.message || "Invalid login details");

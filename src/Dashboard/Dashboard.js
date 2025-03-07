@@ -15,6 +15,8 @@ const Dashboard = () => {
   const { account } = useFetchAccount();
   const { transactions } = useFetchTransaction();
 
+  console.log(account);
+
   return (
     <div className="Dashboard">
       <div className="sidebar">

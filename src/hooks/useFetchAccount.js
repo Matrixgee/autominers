@@ -3,16 +3,22 @@ import Cookies from 'js-cookie';
 const useFetchAccount = () => {
   const [account, setAccount] = useState([])
 
+
+  
+
   useEffect(() => {
     const fetchUserAccount = async () => {
       try {
-        const res = await fetch('http://localhost:5427/api/user/account', {
-          headers: {
-            'Content-type': 'application/json',
-            Authorization: `Bearer ${Cookies.get('access_token')}`,
-          },
-          credentials: 'include'
-        });
+        const res = await fetch(
+          "https://autominner-backend.onrender.com/api/user/account",
+          {
+            headers: {
+              "Content-type": "application/json",
+              Authorization: `Bearer ${Cookies.get("access_token")}`,
+            },
+            credentials: "include",
+          }
+        );
 
         if (!res.ok) {
           throw new Error(`Failed to fetch user details. Status: ${res.status}`);
