@@ -27,23 +27,8 @@ const SideNav = () => {
     cookies.remove("access_token");
   };
 
-  const [Toggle, setToggle] = useState(false);
-
-  const handleToggle = () => {
-    setToggle(!Toggle);
-    console.log(Toggle);
-  };
-
   return (
-    <div className={`DashboardSideNav ${Toggle ? "open" : "closed"}`}>
-      <div className="menuIconCnt">
-        <IoMdMenu
-          className="menuIcon"
-          size={20}
-          color="white"
-          onClick={handleToggle}
-        />
-      </div>
+    <div className="DashboardSideNav">
       <div className="DashboardLogo">
         <img src={DashLogo} alt="Dashboard Logo" />
       </div>
