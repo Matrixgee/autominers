@@ -1,10 +1,15 @@
-import { useState, useEffect } from 'react';
-import Cookies from 'js-cookie';
+import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 const useFetchAccount = () => {
-  const [account, setAccount] = useState([])
+  const [account, setAccount] = useState([]);
 
+  const token = localStorage.getItem("access_token");
 
-  
+  console.log("Token:", token);
+
+  const tokenCookies = Cookies.get("access_token");
+
+  console.log(tokenCookies);
 
   useEffect(() => {
     const fetchUserAccount = async () => {
@@ -14,14 +19,16 @@ const useFetchAccount = () => {
           {
             headers: {
               "Content-type": "application/json",
-              Authorization: `Bearer ${Cookies.get("access_token")}`,
+              Authorization: `Bearer ${token}`,
             },
-            credentials: "include",
+            // credentials: "include",
           }
         );
 
         if (!res.ok) {
-          throw new Error(`Failed to fetch user details. Status: ${res.status}`);
+          throw new Error(
+            `Failed to fetch user details. Status: ${res.status}`
+          );
         }
         const data = await res.json();
         const obj = data.userAccount;
@@ -30,11 +37,11 @@ const useFetchAccount = () => {
       } catch (e) {
         console.error(e);
       }
-    }
+    };
 
-    fetchUserAccount()
+    fetchUserAccount();
   }, []);
   return { account };
-}
+};
 
 export default useFetchAccount;
