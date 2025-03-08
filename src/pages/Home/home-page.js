@@ -24,51 +24,54 @@ import Investor from "../../component/Investor/investor";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-
-
-
 const Home = () => {
-  const [loading , setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   // const history = useHistory();
 
-  useEffect(
-    () => {
-      const fetchData = async => {
-        try{
-        
-        }catch(err) {
+  useEffect(() => {
+    const fetchData = (async) => {
+      try {
+      } catch (err) {}
+    };
+  });
 
-        }
-      }
-     
-    }
-  )
-
-  const investorData = [
-    {
-      name: "Name",
-      crypto: "Crypto Investment",
-      reward: "Reward",
-    },
-    {
-      name: "Palito",
-      crypto: "Bitcoin",
-      reward: "0.5",
-    },
-    {
-      name: "Palito",
-      crypto: "Ethereum",
-      reward: "0.5",
-    },
-    {
-      name: "Palito",
-      crypto: "Bitcoin",
-      reward: "0.5",
-    }
+  const cryptoOptions = [
+    "Bitcoin",
+    "Ethereum",
+    "Solana",
+    "Cardano",
+    "Ripple",
+    "Litecoin",
   ];
+  const names = [
+    "Alice",
+    "Bob",
+    "Charlie",
+    "David",
+    "Emma",
+    "Frank",
+    "Grace",
+    "Hannah",
+  ];
+  const getRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  const getRandomReward = () => (Math.random() * 2).toFixed(2); // Random reward between 0 and 2
+
+  const generateInvestorData = () => {
+    return [
+      { name: "Name", crypto: "Crypto Investment", reward: "Reward" }, // Header
+      ...Array.from({ length: 5 }, () => ({
+        name: getRandom(names),
+        crypto: getRandom(cryptoOptions),
+        reward: getRandomReward(),
+      })),
+    ];
+  };
+
+  const investorData = generateInvestorData();
+
   return (
     <div>
-    <Navigation />
+      <Navigation />
       <div className="hero-section">
         <div className="text-div">
           <h1 className="hero-section-headertext">
@@ -78,7 +81,9 @@ const Home = () => {
             Leave the Complexity to Us and Enjoy Hassle-Free Cryptocurrency
             Management!
           </p>
-          <Link to="/plan-account-creation" className="hero-section-btn">GET STARTED</Link>
+          <Link to="/plan-account-creation" className="hero-section-btn">
+            GET STARTED
+          </Link>
         </div>
       </div>
       <div className="investor">
@@ -99,7 +104,9 @@ const Home = () => {
             <div className="subsection-text-container">
               <h3>Create an Account</h3>
               <p>
-              Simply Sign up by providing your full name and preferred username to register and start earning bitcoin every day. It's that simple!
+                Simply Sign up by providing your full name and preferred
+                username to register and start earning bitcoin every day. It's
+                that simple!
               </p>
             </div>
           </div>
@@ -112,7 +119,9 @@ const Home = () => {
                 is keeping you waiting? Let us get you started to the
                 cryptocurrency mining world!
               </p>
-              <Link to="/Plan" className="view-plans-btn" >View Plans</Link>
+              <Link to="/Plan" className="view-plans-btn">
+                View Plans
+              </Link>
             </div>
             <img src={pick} alt="illustration" />
           </div>
@@ -161,7 +170,9 @@ const Home = () => {
             satisfied with our services. Together, we will navigate the exciting
             world of cryptocurrencies and secure your dream future!
           </p>
-          <Link to="/about-us" className="learn-more-btn" >Learn More</Link>
+          <Link to="/about-us" className="learn-more-btn">
+            Learn More
+          </Link>
         </div>
         <img src={video} alt="video" />
       </div>
@@ -184,13 +195,19 @@ const Home = () => {
           <div className="efficient">
             <img src={dollarIcon} alt="dollar icon" />
             <h4> Cost Efficient</h4>
-            <p>Reliable mining plans with a cloud infrastructure with zero downtime</p>
+            <p>
+              Reliable mining plans with a cloud infrastructure with zero
+              downtime
+            </p>
           </div>
 
           <div className="high-efficiency">
             <img src={bulbIcon} alt="bulb icon" />
             <h4>High Efficiency</h4>
-            <p>Fast and reliable cloud system for mining cryptocurrency with automatic payouts</p>
+            <p>
+              Fast and reliable cloud system for mining cryptocurrency with
+              automatic payouts
+            </p>
           </div>
         </div>
       </div>
@@ -567,7 +584,9 @@ const Home = () => {
               in the future of finance!
             </p>
           </div>
-          <Link to="/sign-up" className="sign-up-btn">Sign Up</Link>
+          <Link to="/sign-up" className="sign-up-btn">
+            Sign Up
+          </Link>
         </div>
 
         <div className="form-section">

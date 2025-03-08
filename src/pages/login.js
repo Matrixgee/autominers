@@ -66,6 +66,7 @@ const Login = () => {
       }
 
       cookies.set("access_token", dataResp.accessToken);
+      localStorage.setItem("access_token", dataResp.accessToken);
       setSuccess(true);
       toast.success("Login successful");
       setError(false);
