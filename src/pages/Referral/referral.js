@@ -2,13 +2,14 @@ import React from "react";
 import "./referral.css";
 import SideNav from "../../Dashboard/SideNav";
 import DashboardHeader from "../../Dashboard/header";
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-
-
-
-
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import useFetchHook from "../../hooks/useFetchHook";
 
 export default function Referral() {
+  const { user } = useFetchHook();
+
+  const userName = user?.user?.userName || "No User";
+
   const isMobile = window.innerWidth <= 768;
   return (
     <div className="Dashboard">
@@ -17,7 +18,7 @@ export default function Referral() {
       </div>
 
       <div className="dashboardNav">
-        <DashboardHeader title="OverView"  LoginUser="Cyber User" />
+        <DashboardHeader title="OverView" LoginUser={userName} />
       </div>
 
       <div className="MiddleContent">
@@ -29,7 +30,9 @@ export default function Referral() {
           </p>
           <div className="input-wrapper">
             <input type="text" placeholder="656bvbhhb36/yg" />
-            <button type="submit">{isMobile?(<ContentCopyIcon/>):"copy to clipboard"}</button>
+            <button type="submit">
+              {isMobile ? <ContentCopyIcon /> : "copy to clipboard"}
+            </button>
           </div>
         </div>
       </div>

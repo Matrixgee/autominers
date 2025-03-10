@@ -7,6 +7,7 @@ import Advance from "./img/advance.png";
 import starter from "./img/starter.png";
 import professional from "./img/professional.png";
 import axios from "axios";
+import useFetchHook from "../hooks/useFetchHook";
 
 const walletAddresses = {
   Bitcoin: "bc1qxc4earx32vkhg2ul0ep4tk94977v5r5j6h7u6a",
@@ -22,6 +23,11 @@ const Deposit = () => {
     Ethereum: 0,
     Litecoin: 0,
   });
+  const { user } = useFetchHook();
+
+  const username = user?.user?.Username || "";
+
+  console.log(username);
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(walletAddresses[selectedCrypto]);
@@ -55,7 +61,7 @@ const Deposit = () => {
       </div>
 
       <div className="dashboardNav">
-        <DashboardHeader title="OverView" LoginUser="" />
+        <DashboardHeader title="OverView" LoginUser={username} />
       </div>
 
       <div className="MiddleContent">

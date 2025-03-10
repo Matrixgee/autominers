@@ -21,10 +21,14 @@ import PersonIcon from "@mui/icons-material/Person";
 import { IoMdMenu } from "react-icons/io";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const SideNav = () => {
   const handleLogOut = () => {
-    cookies.remove("access_token");
+    Cookies.remove("access_token");
+    Cookies.remove("authToken");
+    localStorage.removeItem("access_token"); // Optional: Also clear from localStorage
+    window.location.href = "/login";
   };
 
   return (

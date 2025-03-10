@@ -15,6 +15,12 @@ const Dashboard = () => {
   const { account } = useFetchAccount();
   const { transactions } = useFetchTransaction();
 
+  console.log(user);
+
+  const username = user?.user?.Username || "";
+
+  console.log(username);
+
   console.log(account);
 
   return (
@@ -24,7 +30,7 @@ const Dashboard = () => {
       </div>
 
       <div className="dashboardNav">
-        <DashboardHeader title="OverView" LoginUser={user.Username ?? ""} />
+        <DashboardHeader title="OverView" LoginUser={username} />
       </div>
 
       <div className="MiddleContent">
