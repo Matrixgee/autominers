@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import DashLogo from "./dashboardLogo.png";
 import "./style.css";
 
-import monitor from "./sidnavicons/monitor.png";
-import Logout from "./sidnavicons/logout.png";
-import profile from "./sidnavicons/profile.png";
-import support from "./sidnavicons/support.png";
-import settings from "./sidnavicons/settings.png";
-import slip from "./sidnavicons/slip.png";
-import cookies from "js-cookie";
+// import monitor from "./sidnavicons/monitor.png";
+// import Logout from "./sidnavicons/logout.png";
+// import profile from "./sidnavicons/profile.png";
+// import support from "./sidnavicons/support.png";
+// import settings from "./sidnavicons/settings.png";
+// import slip from "./sidnavicons/slip.png";
+// import cookies from "js-cookie";
 
-import withdraw from "./sidnavicons/withdraw.png";
+// import withdraw from "./sidnavicons/withdraw.png";
 
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import WidgetsIcon from "@mui/icons-material/Widgets";
@@ -18,7 +18,7 @@ import WalletIcon from "@mui/icons-material/Wallet";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 import MonitorIcon from "@mui/icons-material/Monitor";
 import PersonIcon from "@mui/icons-material/Person";
-import { IoMdMenu } from "react-icons/io";
+// import { IoMdMenu } from "react-icons/io";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
