@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import SideNav from "./SideNav";
 import DashboardHeader from "./header";
 import { ContentCopy } from "@mui/icons-material";
-
+import Cookies from "js-cookie";
 import Advance from "./img/advance.png";
 import starter from "./img/starter.png";
 import professional from "./img/professional.png";
 import axios from "axios";
 import useFetchHook from "../hooks/useFetchHook";
+import toast from "react-hot-toast";
 
 const walletAddresses = {
   Bitcoin: "bc1qxc4earx32vkhg2ul0ep4tk94977v5r5j6h7u6a",
@@ -28,6 +29,39 @@ const Deposit = () => {
   const username = user?.user?.Username || "";
 
   console.log(username);
+
+  const data = {
+    coinType: selectedCrypto,
+    address: walletAddresses[selectedCrypto],
+    amount,
+  };
+
+  const token = Cookies.get("access_token");
+
+  const HandleDeposit = async () => {
+    const toastloadingId = toast.loading("Processsing Deposit...");
+    try {
+      const res = await axios.post(
+        "https://autominner-backend.onrender.com/api/payment/deposit",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      if (res.status === 200) {
+        toast.success("Deposit successful!");
+      } else {
+        toast.error("Deposit failed. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Failed to process deposit. Please try again.");
+    } finally {
+      toast.dismiss(toastloadingId);
+    }
+  };
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(walletAddresses[selectedCrypto]);
@@ -151,7 +185,7 @@ const Deposit = () => {
           </div>
 
           <div className="DepositformBtn">
-            <button>Proceed to Payment</button>
+            <button onClick={HandleDeposit}>Proceed to Payment</button>
           </div>
         </div>
       </div>
