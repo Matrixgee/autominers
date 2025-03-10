@@ -1,4 +1,3 @@
-
 import "./profile-details.css";
 import angleIcon from "../../assets/icons/angle-icon.png";
 import settingsIcon from "../../assets/icons/settings-icon.png";
@@ -6,8 +5,13 @@ import settingsIcon from "../../assets/icons/settings-icon.png";
 import { Link } from "react-router-dom";
 import ImagePreview from "../../component/Image-Preview/image-preview";
 
-
 const ProfileDetails = ({ user }) => {
+  console.log(user);
+
+  const firstName = user?.user?.first_name || "No Name";
+  const lastName = user?.user?.Last_name || "No Name";
+  const email = user?.user?.Email || "No Email";
+
   return (
     <div className="profile-container">
       <div>
@@ -16,8 +20,8 @@ const ProfileDetails = ({ user }) => {
           {/* <img src={memoji} alt="profile-image" className="profile-image" /> */}
         </div>
         <div className="header">
-          <h4>{user.Username ?? 'John Doe'}</h4>
-          <p>{user.Email ?? 'john@example.com'}</p>
+          <h4>{`${firstName} ${lastName}`}</h4>
+          <p>{email}</p>
         </div>
       </div>
 

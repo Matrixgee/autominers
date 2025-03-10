@@ -2,35 +2,43 @@ import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 
 const useFetchHook = () => {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState(null);
+  const [error, setError] = useState(null);
 
   console.log(user);
 
   useEffect(() => {
     const fetchUserDetail = async () => {
+      const token = Cookies.get("access_token");
+
+      if (!token) {
+        setError("No access token found.");
+        return;
+      }
+
       try {
         const res = await fetch(
           "https://autominner-backend.onrender.com/api/user/account",
           {
+            method: "GET",
             headers: {
-              "Content-type": "application/json",
-              Authorization: `Bearer ${Cookies.get("access_token")}`,
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
             },
-            credentials: "include",
           }
         );
 
         if (!res.ok) {
-          throw new Error(
-            `Failed to fetch user details. Status: ${res.status}`
-          );
+          const errorText = await res.text(); // Read raw response (JSON or HTML)
+          throw new Error(`HTTP ${res.status}: ${errorText}`);
         }
 
         const data = await res.json();
-        console.log(data.user);
-        setUser(data.user);
-      } catch (e) {
-        console.error(e);
+        setUser(data);
+        console.log(data);
+      } catch (error) {
+        console.error("Fetch error:", error.message);
+        setError(error.message || "An error occurred");
       }
     };
 

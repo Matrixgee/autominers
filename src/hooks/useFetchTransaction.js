@@ -1,39 +1,48 @@
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
+
 const useFetchTransaction = () => {
-  const [transactions, setTransaction] = useState([]);
+  const [transactions, setTransactions] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchUserTransactions = async () => {
+      const token = Cookies.get("access_token");
+
+      if (!token) {
+        setError("No access token found.");
+        return;
+      }
+
       try {
         const res = await fetch(
           "https://autominner-backend.onrender.com/api/user/account",
           {
+            method: "GET",
             headers: {
-              "Content-type": "application/json",
-              Authorization: `Bearer ${Cookies.get("access_token")}`,
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
             },
-            credentials: "include",
           }
         );
 
         if (!res.ok) {
-          throw new Error(
-            `Failed to fetch user details. Status: ${res.status}`
-          );
+          const errorText = await res.text();
+          throw new Error(`HTTP ${res.status}: ${errorText}`);
         }
+
         const data = await res.json();
-        const obj = data.transactionHistory;
-        // console.log(obj)
-        setTransaction(obj);
-      } catch (e) {
-        console.error(e);
+        setTransactions(data.transactions || []); // Ensure transactions exist
+      } catch (error) {
+        console.error("Fetch error:", error.message);
+        setError(error.message || "An error occurred");
       }
     };
 
     fetchUserTransactions();
   }, []);
-  return { transactions };
+
+  return { transactions, error };
 };
 
 export default useFetchTransaction;
