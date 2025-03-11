@@ -1,0 +1,177 @@
+/* Admin Overview Styles */
+.AdminOver {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styling */
+.AdminHead {
+  width: 100%;
+  height: 20%; /* Adjusted for better spacing */
+  background: #1d3557; /* Dark blue for a professional look */
+}
+
+.AdminHold {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+.AdminImgLogo img {
+  height: 40px; /* Adjust logo size */
+}
+
+/* Right-side Admin Menu */
+.AdminMenu {
+  position: relative;
+}
+
+.UserDropdown {
+  position: relative;
+}
+
+.UserDropdown button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.DropdownMenu {
+  width: 12rem;
+  height: 12rem;
+  background: #f4f6f9;
+  border-radius: 10px;
+  position: absolute;
+  top: 52px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 100;
+}
+
+/* Navigation Links */
+.AdminNav {
+  width: 100%;
+  height: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.AdminNavLinks {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.AdminNav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  background: #1e2e4f;
+}
+
+.AdminNav a:hover {
+  background: #1e2e4f;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .AdminHold {
+    padding: 15px;
+  }
+
+  .AdminNav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .AdminNavLinks {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .AdminNav a {
+    margin-bottom: 5px;
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .AdminHead {
+    height: auto;
+  }
+
+  .AdminHold {
+    height: auto;
+    padding: 10px;
+  }
+
+  .AdminImgLogo img {
+    height: 30px;
+  }
+
+  .UserDropdown button {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .DropdownMenu {
+    width: 10rem;
+    height: 10rem;
+    top: 40px;
+  }
+
+  .AdminNav {
+    padding: 8px;
+  }
+
+  .AdminNav a {
+    padding: 6px;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .AdminNavLinks {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 320px) {
+  .AdminHold {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .AdminMenu {
+    margin-top: 10px;
+  }
+
+  .AdminImgLogo img {
+    height: 25px;
+  }
+}

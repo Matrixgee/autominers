@@ -1,0 +1,55 @@
+.table-row td {
+  padding: 1rem;
+  border-bottom: 3px solid #e6f0f3;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+/* Status Badge Styling */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-completed {
+  background-color: #e6f7ed;
+  color: #0d8a3e;
+}
+
+.status-pending {
+  background-color: #fff8e6;
+  color: #c98600;
+}
+
+.status-failed {
+  background-color: #fde8e8;
+  color: #d13030;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .table-row td {
+    padding: 0.75rem;
+    font-size: 14px;
+  }
+
+  .status-badge {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .table-row td {
+    padding: 0.5rem;
+    font-size: 13px;
+  }
+
+  .status-badge {
+    font-size: 11px;
+    padding: 2px 5px;
+  }
+}

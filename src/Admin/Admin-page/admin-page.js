@@ -1,9 +1,8 @@
 import React from "react";
 import "./admin-page.css";
 import AdminComponent from "../../component/AdminComponent/admin-component";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import DottedIcon from "../../component/DottedIcon/dotted-icon";
-
+import AdminHeader from "../dashboard/adminHeader";
+import DootedIcon from "../../component/DottedIcon/dotted-icon";
 const AdminPage = () => {
   const adminData = [
     {
@@ -14,7 +13,6 @@ const AdminPage = () => {
       amount: 0.000563,
       walletaddress: "jhhbgf759hmahga;",
       country: "Ghana",
-      action: <DottedIcon />,
     },
     {
       id: 267,
@@ -24,7 +22,6 @@ const AdminPage = () => {
       amount: 0.000563,
       walletaddress: "jhhbgf759hmahga;",
       country: "Ghana",
-      action: <DottedIcon />,
     },
     {
       id: 267,
@@ -34,7 +31,6 @@ const AdminPage = () => {
       amount: 0.000563,
       walletaddress: "jhhbgf759hmahga;",
       country: "Ghana",
-      action: <DottedIcon />,
     },
     {
       id: 267,
@@ -44,7 +40,6 @@ const AdminPage = () => {
       amount: 0.000563,
       walletaddress: "jhhbgf759hmahga;",
       country: "Ghana",
-      action: <DottedIcon />,
     },
     {
       id: 267,
@@ -54,7 +49,6 @@ const AdminPage = () => {
       amount: 0.000563,
       walletaddress: "jhhbgf759hmahga;",
       country: "Ghana",
-      action: <DottedIcon />,
     },
     {
       id: 267,
@@ -64,44 +58,42 @@ const AdminPage = () => {
       amount: 0.000563,
       walletaddress: "jhhbgf759hmahga;",
       country: "Ghana",
-      action: <DottedIcon />,
     },
   ];
   return (
-    <div className="table-container">
-      <div className="table-header">
-        <p>ID</p>
-        <p>First Name</p>
-        <p>Email Address</p>
-        <p>Coin Type</p>
-        <p>0.000563</p>
-        <p>Wallet Address</p>
-        <p>Country</p>
-        <p>Action</p>
+    <div className="AdminUserPage">
+      <AdminHeader />
+      <div className="table-container">
+        <table className="admin-table">
+          <thead>
+            <tr className="table-header">
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Email Address</th>
+              <th>Coin Type</th>
+              <th>Amount</th>
+              <th>Wallet Address</th>
+              <th>Country</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {adminData.map((item, index) => (
+              <AdminComponent
+                key={index}
+                id={item.id}
+                firstname={item.firstname}
+                emailaddress={item.emailaddress}
+                cointype={item.cointype}
+                amount={item.amount}
+                walletaddress={item.walletaddress}
+                country={item.country}
+                action={<DootedIcon />}
+              />
+            ))}
+          </tbody>
+        </table>
       </div>
-      {adminData.map(
-        ({
-          id,
-          firstname,
-          emailaddress,
-          cointype,
-          amount,
-          walletaddress,
-          country,
-          action,
-        }) => (
-          <AdminComponent
-            id={id}
-            firstname={firstname}
-            emailaddress={emailaddress}
-            cointype={cointype}
-            amount={amount}
-            walletaddress={walletaddress}
-            country={country}
-            action={action}
-          />
-        )
-      )}
     </div>
   );
 };

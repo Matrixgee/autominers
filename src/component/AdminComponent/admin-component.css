@@ -1,15 +1,23 @@
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
+/* For admin-component.css */
+.table-row td {
   padding: 1rem;
-  width: 100%;
-  border: 3px solid #e6f0f3;
-}
-.container p {
-  margin: auto 0;
-  color: red;
+  border-bottom: 3px solid #e6f0f3;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
+  color: #1e2e4f;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .table-row td {
+    padding: 0.75rem;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .table-row td {
+    padding: 0.5rem;
+    font-size: 13px;
+  }
 }
