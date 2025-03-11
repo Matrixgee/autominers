@@ -30,6 +30,7 @@ import Plan from "./pages/Plan/plan";
 import SignUpVerification from "./pages/SignupVerification";
 import AdminLogin from "./Admin/Auth/login";
 import AdminOverview from "./Admin/dashboard/adminoverview";
+import TransactionsPage from "./Admin/dashboard/Transactionpage";
 
 function App() {
   return (
@@ -66,6 +67,7 @@ function App() {
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
             <Route path="admin/over" element={<AdminOverview />} />
             <Route path="admin/users" element={<AdminPage />} />
+            <Route path="admin/transactions" element={<TransactionsPage />} />
             <Route path="crypto/feeds" element={<Feeds />} />
             <Route path="fund-account" element={<FundAccount />} />
             <Route path="fund-success" element={<FundSuccess />} />
