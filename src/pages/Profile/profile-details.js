@@ -8,9 +8,9 @@ import ImagePreview from "../../component/Image-Preview/image-preview";
 const ProfileDetails = ({ user }) => {
   console.log(user);
 
-  const firstName = user?.user?.first_name || "No Name";
-  const lastName = user?.user?.Last_name || "No Name";
-  const email = user?.user?.Email || "No Email";
+  const firstName = user?.user?.first_name || "";
+  const lastName = user?.user?.Last_name || "";
+  const email = user?.user?.Email || "";
 
   return (
     <div className="profile-container">

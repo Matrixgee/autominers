@@ -16,7 +16,7 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import WidgetsIcon from "@mui/icons-material/Widgets";
 import WalletIcon from "@mui/icons-material/Wallet";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-import MonitorIcon from "@mui/icons-material/Monitor";
+import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 // import { IoMdMenu } from "react-icons/io";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -67,9 +67,9 @@ const SideNav = () => {
             </Link>
           </li>
           <li>
-            <Link to="/account/history">
-              <MonitorIcon className="sidebarIcon" />
-              <span>Mining History</span>
+            <Link to="/">
+              <HomeIcon className="sidebarIcon" />
+              <span>Home</span>
             </Link>
           </li>
         </ul>

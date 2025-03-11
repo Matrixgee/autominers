@@ -19,6 +19,7 @@ const walletAddresses = {
 const Deposit = () => {
   const [selectedCrypto, setSelectedCrypto] = useState("Bitcoin");
   const [amount, setAmount] = useState("");
+  const [loading, setloading] = useState(false);
   const [exchangeRates, setExchangeRates] = useState({
     Bitcoin: 0,
     Ethereum: 0,
@@ -40,7 +41,9 @@ const Deposit = () => {
 
   const HandleDeposit = async () => {
     const toastloadingId = toast.loading("Processsing Deposit...");
+
     try {
+      setloading(true);
       const res = await axios.post(
         "https://autominner-backend.onrender.com/api/payment/deposit",
         data,
@@ -60,6 +63,7 @@ const Deposit = () => {
       toast.error("Failed to process deposit. Please try again.");
     } finally {
       toast.dismiss(toastloadingId);
+      setloading(false);
     }
   };
 
@@ -185,7 +189,9 @@ const Deposit = () => {
           </div>
 
           <div className="DepositformBtn">
-            <button onClick={HandleDeposit}>Proceed to Payment</button>
+            <button onClick={HandleDeposit}>
+              {loading ? "Processing...." : "Proceed to Deposit"}
+            </button>
           </div>
         </div>
       </div>
