@@ -41,6 +41,12 @@ const AdminHeader = () => {
           <span>
             <Link to="/admin/transactions">All Transactions</Link>
           </span>
+          <span>
+            <Link to="/admin/create-plans">Create Plans</Link>
+          </span>
+          <span>
+            <Link to="/admin/allplans">All Plans</Link>
+          </span>
         </div>
       </nav>
     </div>
