@@ -31,6 +31,8 @@ import SignUpVerification from "./pages/SignupVerification";
 import AdminLogin from "./Admin/Auth/login";
 import AdminOverview from "./Admin/dashboard/adminoverview";
 import TransactionsPage from "./Admin/dashboard/Transactionpage";
+import AllPlans from "./Admin/dashboard/allplans";
+import CreatePlans from "./Admin/dashboard/createplans";
 
 function App() {
   return (
@@ -68,6 +70,8 @@ function App() {
             <Route path="admin/over" element={<AdminOverview />} />
             <Route path="admin/users" element={<AdminPage />} />
             <Route path="admin/transactions" element={<TransactionsPage />} />
+            <Route path="admin/allplans" element={<AllPlans />} />
+            <Route path="admin/create-plans" element={<CreatePlans />} />
             <Route path="crypto/feeds" element={<Feeds />} />
             <Route path="fund-account" element={<FundAccount />} />
             <Route path="fund-success" element={<FundSuccess />} />

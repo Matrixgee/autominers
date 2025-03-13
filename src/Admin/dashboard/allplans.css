@@ -1,0 +1,152 @@
+/* allplans.css */
+
+.plans-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.plans-heading {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+
+.plans-subheading {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.plan-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.popular {
+  border: 2px solid #4d7cfe;
+  transform: scale(1.05);
+}
+
+.popular:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #4d7cfe;
+  color: white;
+  padding: 8px 16px;
+  border-bottom-left-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.plan-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.plan-price {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.price {
+  font-size: 42px;
+  font-weight: bold;
+  color: #333;
+}
+
+.period {
+  font-size: 16px;
+  color: #666;
+}
+
+.plan-features {
+  margin-bottom: 30px;
+}
+
+.plan-features ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan-features li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  padding-left: 30px;
+}
+
+.plan-features li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4d7cfe;
+  font-weight: bold;
+}
+
+.plan-features li:last-child {
+  border-bottom: none;
+}
+
+.subscribe-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #4d7cfe;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #3a68e0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .plans-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .popular {
+    transform: scale(1);
+  }
+
+  .popular:hover {
+    transform: translateY(-10px);
+  }
+}
