@@ -4,22 +4,26 @@ import "./admin-component.css";
 export default function AdminComponent({
   id,
   firstname,
+  lastname,
   emailaddress,
+  username,
   cointype,
-  amount,
+  balance,
   walletaddress,
-  country,
+  date,
   action,
 }) {
   return (
     <tr className="table-row">
       <td>{id}</td>
       <td>{firstname}</td>
+      <td>{lastname}</td>
       <td>{emailaddress}</td>
+      <td>{username}</td>
       <td>{cointype}</td>
-      <td>{amount}</td>
-      <td>{walletaddress}</td>
-      <td>{country}</td>
+      <td>{balance}</td>
+
+      <td>{date}</td>
       <td>{action}</td>
     </tr>
   );

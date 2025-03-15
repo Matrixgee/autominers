@@ -140,6 +140,7 @@ const Login = () => {
                   <button
                     className="btn btn-primary"
                     onClick={(e) => handleSubmit(e)}
+                    disabled={loading}
                   >
                     {loading ? "Loading..." : "Login"}
                   </button>
