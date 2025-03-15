@@ -1,79 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./transaction-page.css";
-
 import DottedIcon from "../../component/DottedIcon/dotted-icon";
 import AdminHeader from "../dashboard/adminHeader";
 import TransactionComponent from "../../component/AdminComponent/transaction-component";
+import toast from "react-hot-toast";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const TransactionsPage = () => {
-  const transactionsData = [
-    {
-      id: 1001,
-      username: "John Doe",
-      emailaddress: "johndoe@example.com",
-      transactionType: "Deposit",
-      amount: 0.00245,
-      coinType: "BTC",
-      status: "Completed",
-      date: "2023-05-12",
-      action: <DottedIcon />,
-    },
-    {
-      id: 1002,
-      username: "Jane Smith",
-      emailaddress: "janesmith@example.com",
-      transactionType: "Withdrawal",
-      amount: 0.00189,
-      coinType: "ETH",
-      status: "Pending",
-      date: "2023-05-13",
-      action: <DottedIcon />,
-    },
-    {
-      id: 1003,
-      username: "Robert Johnson",
-      emailaddress: "rjohnson@example.com",
-      transactionType: "Deposit",
-      amount: 0.00562,
-      coinType: "BTC",
-      status: "Completed",
-      date: "2023-05-14",
-      action: <DottedIcon />,
-    },
-    {
-      id: 1004,
-      username: "Emily Williams",
-      emailaddress: "emilyw@example.com",
-      transactionType: "Withdrawal",
-      amount: 0.00327,
-      coinType: "ETH",
-      status: "Failed",
-      date: "2023-05-15",
-      action: <DottedIcon />,
-    },
-    {
-      id: 1005,
-      username: "Michael Brown",
-      emailaddress: "mbrown@example.com",
-      transactionType: "Deposit",
-      amount: 0.00118,
-      coinType: "BTC",
-      status: "Completed",
-      date: "2023-05-16",
-      action: <DottedIcon />,
-    },
-    {
-      id: 1006,
-      username: "Sarah Davis",
-      emailaddress: "sdavis@example.com",
-      transactionType: "Withdrawal",
-      amount: 0.00493,
-      coinType: "ETH",
-      status: "Pending",
-      date: "2023-05-17",
-      action: <DottedIcon />,
-    },
-  ];
+  const [AllTransaction, setAllTransaction] = useState([]);
+
+  const token = Cookies.get("access_token");
+
+  console.log(token);
+
+  const getAllTransaction = async () => {
+    const toastLoadingId = toast.loading("Fetching transactions...");
+    try {
+      const res = await axios.get(
+        "https://autominner-backend.onrender.com/api/admin/transactions",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      if (Array.isArray(res.data)) {
+        setAllTransaction(res.data);
+      } else {
+        console.error("API response is not an array:", res.data);
+        setAllTransaction([]); // Set empty array to prevent errors
+      }
+
+      // console.log("Transaction Response:", res.data);
+      // setAllTransaction(res.data);
+    } catch (error) {
+      console.error("Error fetching transactions:", error.response || error);
+      toast.error(
+        error.response?.data?.message || "Failed to fetch transactions."
+      );
+    } finally {
+      toast.dismiss(toastLoadingId);
+    }
+  };
+
+  useEffect(() => {
+    getAllTransaction();
+  }, []);
 
   return (
     <div className="TransactionsPage">
@@ -94,7 +68,7 @@ const TransactionsPage = () => {
             </tr>
           </thead>
           <tbody>
-            {transactionsData.map((item, index) => (
+            {AllTransaction.map((item, index) => (
               <TransactionComponent
                 key={index}
                 id={item.id}
@@ -105,7 +79,7 @@ const TransactionsPage = () => {
                 coinType={item.coinType}
                 status={item.status}
                 date={item.date}
-                action={item.action}
+                action={<DottedIcon />}
               />
             ))}
           </tbody>

@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import "./style.css";
 import logo from "../../pages/img/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AdminHeader = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleLogout = () => {
     console.log("Logging out...");
     // Add logout logic here
+    localStorage.removeItem("data");
+    localStorage.removeItem("access_token");
+    navigate("/admin/login");
+    window.location.reload();
   };
+
+  const admin = JSON.parse(localStorage.getItem("data"));
 
   return (
     <div className="AdminHead">
@@ -19,11 +27,11 @@ const AdminHeader = () => {
         </div>
         <div className="UserDropdown">
           <button onClick={() => setDropdownOpen(!dropdownOpen)}>
-            Admin Name ▾
+            {admin.username} ▾
           </button>
           {dropdownOpen && (
             <div className="DropdownMenu">
-              <p>admin@example.com</p>
+              <p>{admin.email}</p>
               <button onClick={handleLogout} className="LogoutButton">
                 Logout
               </button>

@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import "./createplans.css";
 import AdminHeader from "./adminHeader";
+import toast from "react-hot-toast";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const CreatePlan = () => {
   // State to track form inputs
   const [formData, setFormData] = useState({
-    planName: "",
-    minAmount: "",
-    maxAmount: "",
+    plan_name: "",
+    min_amount: "",
+    max_amount: "",
     roi: "",
     duration: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   // Handle form input changes
   const handleInputChange = (e) => {
@@ -22,80 +26,109 @@ const CreatePlan = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Create new plan object
-    const newPlan = {
-      id: Date.now(), // Simple unique ID
-      planName: formData.planName,
-      minAmount: parseFloat(formData.minAmount),
-      maxAmount: parseFloat(formData.maxAmount),
-      roi: parseFloat(formData.roi),
-      duration: parseInt(formData.duration),
-    };
+    // Validate data
+    if (parseFloat(formData.min_amount) >= parseFloat(formData.max_amount)) {
+      toast.error("Maximum amount must be greater than minimum amount");
+      return;
+    }
 
-    // Here you would typically save the plan to your database
-    console.log("New plan created:", newPlan);
+    const token = Cookies.get("access_token");
+    setIsLoading(true);
+    const toastLoadingId = toast.loading("Creating investment plan...");
 
-    // Reset form
-    setFormData({
-      planName: "",
-      minAmount: "",
-      maxAmount: "",
-      roi: "",
-      duration: "",
-    });
+    try {
+      const response = await axios.post(
+        "https://autominner-backend.onrender.com/api/admin/plans",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      toast.success("Investment plan created successfully!");
+      // Reset form
+      setFormData({
+        plan_name: "",
+        min_amount: "",
+        max_amount: "",
+        roi: "",
+        duration: "",
+      });
+
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error creating plan:", error);
+      toast.error(
+        error.response?.data?.message || "Failed to create investment plan"
+      );
+    } finally {
+      setIsLoading(false);
+      toast.dismiss(toastLoadingId);
+    }
   };
 
   return (
-    <div>
-      <AdminHeader />{" "}
+    <div className="create-plan-page">
+      <AdminHeader />
       <div className="plans-container">
-        <h1 className="plans-heading">Create Investment Plan</h1>
+        <div className="plans-header">
+          <h1 className="plans-heading">Create Investment Plan</h1>
+          <p className="plans-subheading">
+            Set up a new investment package for your users
+          </p>
+        </div>
 
         {/* Admin Form Section */}
         <div className="admin-form-container">
           <form onSubmit={handleSubmit} className="plan-form">
             <div className="form-group">
-              <label htmlFor="planName">Plan Name</label>
+              <label htmlFor="plan_name">Plan Name</label>
               <input
                 type="text"
-                id="planName"
-                name="planName"
-                value={formData.planName}
+                id="plan_name"
+                name="plan_name"
+                value={formData.plan_name}
                 onChange={handleInputChange}
-                placeholder="Enter plan name"
+                placeholder="Enter plan name (e.g. Silver Package)"
                 required
+                className="form-input"
               />
             </div>
 
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="minAmount">Minimum Amount ($)</label>
+                <label htmlFor="min_amount">Minimum Amount ($)</label>
                 <input
                   type="number"
-                  id="minAmount"
-                  name="minAmount"
-                  value={formData.minAmount}
+                  id="min_amount"
+                  name="min_amount"
+                  value={formData.min_amount}
                   onChange={handleInputChange}
-                  placeholder="Minimum investment amount"
+                  placeholder="100"
                   required
                   min="0"
+                  className="form-input"
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="maxAmount">Maximum Amount ($)</label>
+                <label htmlFor="max_amount">Maximum Amount ($)</label>
                 <input
                   type="number"
-                  id="maxAmount"
-                  name="maxAmount"
-                  value={formData.maxAmount}
+                  id="max_amount"
+                  name="max_amount"
+                  value={formData.max_amount}
                   onChange={handleInputChange}
-                  placeholder="Maximum investment amount"
+                  placeholder="1000"
                   required
                   min="0"
+                  className="form-input"
                 />
               </div>
             </div>
@@ -109,11 +142,15 @@ const CreatePlan = () => {
                   name="roi"
                   value={formData.roi}
                   onChange={handleInputChange}
-                  placeholder="Return on investment percentage"
+                  placeholder="15.5"
                   required
                   step="0.1"
                   min="0"
+                  className="form-input"
                 />
+                <small className="form-helper-text">
+                  Return on investment percentage
+                </small>
               </div>
 
               <div className="form-group">
@@ -124,16 +161,39 @@ const CreatePlan = () => {
                   name="duration"
                   value={formData.duration}
                   onChange={handleInputChange}
-                  placeholder="Investment duration in days"
+                  placeholder="30"
                   required
                   min="1"
+                  className="form-input"
                 />
+                <small className="form-helper-text">
+                  Investment period length
+                </small>
               </div>
             </div>
 
-            <div className="create-plan-btn">
-              <button type="submit" className="create-plan-button">
-                Create Plan
+            <div className="form-actions">
+              {/* <button
+                type="button"
+                className="cancel-button"
+                onClick={() => {
+                  setFormData({
+                    plan_name: "",
+                    min_amount: "",
+                    max_amount: "",
+                    roi: "",
+                    duration: "",
+                  });
+                }}
+              >
+                Cancel
+              </button> */}
+              <button
+                type="submit"
+                className="create-plan-button"
+                disabled={isLoading}
+              >
+                {isLoading ? "Creating..." : "Create Plan"}
               </button>
             </div>
           </form>

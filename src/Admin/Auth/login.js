@@ -42,7 +42,7 @@ const AdminLogin = () => {
 
     try {
       const response = await fetch(
-        "https://autominner-backend.onrender.com/api/auth/login",
+        "https://autominner-backend.onrender.com/api/admin/login",
         {
           method: "POST",
           headers: {
@@ -68,12 +68,13 @@ const AdminLogin = () => {
 
       cookies.set("access_token", dataResp.accessToken);
       localStorage.setItem("access_token", dataResp.accessToken);
+      localStorage.setItem("data", JSON.stringify(dataResp.admin));
       setSuccess(true);
       toast.success("Login successful");
       setError(false);
 
       // ✅ Fix: Correct navigation function name
-      navigate("/account/dashboard");
+      navigate("/admin/users");
     } catch (error) {
       console.error(error);
       setSuccess(false);
@@ -137,6 +138,7 @@ const AdminLogin = () => {
                   <button
                     className="btn btn-primary"
                     onClick={(e) => handleSubmit(e)}
+                    disabled={loading}
                   >
                     {loading ? "Loading..." : "Login"}
                   </button>
