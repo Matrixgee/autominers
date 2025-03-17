@@ -56,7 +56,10 @@ const Signup = () => {
       if ((!response.status === 200) | (!response.status === 201)) {
         throw new Error("an error occurred");
       }
-      if (!response.ok) throw new Error(dataResp.message);
+      if (!response.ok)
+        throw new Error(
+          "An error occurred during registration... Please try again.."
+        );
       if (response.status === 400) throw dataResp.message;
       const DataHash = md5(userN);
       const codeDir = `/account-verification/?'${DataHash}`;

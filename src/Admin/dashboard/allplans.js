@@ -143,7 +143,7 @@ const AllPlans = () => {
           </p>
           <button
             className="add-plan-button"
-            onClick={() => (window.location.href = "/admin/create-plan")}
+            onClick={() => (window.location.href = "/admin/create-plans")}
           >
             + Add New Plan
           </button>
