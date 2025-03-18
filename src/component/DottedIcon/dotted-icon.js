@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import IconButton from "@mui/material/IconButton";
 import Popover from "@mui/material/Popover";
 import List from "@mui/material/List";
@@ -12,13 +12,18 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DeleteIcon from "@mui/icons-material/Delete";
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import toast from "react-hot-toast";
 import axios from "axios";
 import Cookies from "js-cookie";
+import TransactionModal from "../transactional/transactionalmodal";
 
-const DottedIcon = ({ userId, onDeleteSuccess }) => {
+const DottedIcon = ({ userId, onDeleteSuccess, getAllUsers }) => {
+  console.log(getAllUsers);
+
   const [anchorEl, setAnchorEl] = useState(null);
   const [openConfirmDialog, setOpenConfirmDialog] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const token = Cookies.get("access_token");
 
   const handleClick = (event) => {
@@ -58,7 +63,6 @@ const DottedIcon = ({ userId, onDeleteSuccess }) => {
       toast.success("User deleted successfully");
       handleConfirmDialogClose();
 
-      // Call the callback function if provided to refresh the user list
       if (onDeleteSuccess) {
         onDeleteSuccess();
       }
@@ -92,12 +96,29 @@ const DottedIcon = ({ userId, onDeleteSuccess }) => {
         PaperProps={{
           elevation: 2,
           sx: {
-            width: 150,
+            width: 180,
             borderRadius: "8px",
           },
         }}
       >
         <List disablePadding>
+          {/* Credit/Debit User Option */}
+          <ListItem
+            button
+            onClick={() => {
+              setModalOpen(true);
+              handleClose();
+            }}
+            sx={{
+              color: "primary.main",
+              "&:hover": { backgroundColor: "rgba(25, 118, 210, 0.08)" },
+            }}
+          >
+            <MonetizationOnIcon fontSize="small" sx={{ mr: 1 }} />
+            <ListItemText primary="Credit/Debit" />
+          </ListItem>
+
+          {/* Delete User Option */}
           <ListItem
             button
             onClick={handleDeleteClick}
@@ -146,6 +167,15 @@ const DottedIcon = ({ userId, onDeleteSuccess }) => {
           </Button>
         </DialogActions>
       </Dialog>
+
+      {/* Credit/Debit Transaction Modal */}
+      {modalOpen && (
+        <TransactionModal
+          userId={userId}
+          onClose={() => setModalOpen(false)}
+          onTransactionComplete={getAllUsers}
+        />
+      )}
     </div>
   );
 };
