@@ -41,7 +41,7 @@ const CreatePlan = () => {
 
     try {
       const response = await axios.post(
-        "https://autominner-backend.onrender.com/api/admin/plans",
+        "https://api.autominner.com/api/admin/plans",
         formData,
         {
           headers: {
