@@ -1,6 +1,6 @@
 import React from "react";
 import "./about-us.css";
-import miningSolution from "../../assets/mining-solution.png";
+// import miningSolution from "../../assets/mining-solution.png";
 import visionIcon from "../../assets/Vision-icon.png";
 import missionIcon from "../../assets/mission-icon.png";
 import coreValuesIcon from "../../assets/core-value-icon.png";
