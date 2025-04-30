@@ -33,6 +33,7 @@ import AdminOverview from "./Admin/dashboard/adminoverview";
 import TransactionsPage from "./Admin/dashboard/Transactionpage";
 import AllPlans from "./Admin/dashboard/allplans";
 import CreatePlans from "./Admin/dashboard/createplans";
+import RegisterAdmin from "./Admin/Auth/registeradmin";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
             <Route path="plan" element={<Plan />} />
             <Route path="login" element={<Login />} />
             <Route path="admin/login" element={<AdminLogin />} />
+            <Route path="admin/register" element={<RegisterAdmin />} />
             <Route path="account/dashboard" element={<Dashboard />} />
             <Route path="account/withdrawal" element={<Withdrawal />} />
             <Route path="account/Deposit" element={<Deposit />} />
