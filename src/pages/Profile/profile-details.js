@@ -20,7 +20,7 @@ const ProfileDetails = ({ user }) => {
           {/* <img src={memoji} alt="profile-image" className="profile-image" /> */}
         </div>
         <div className="header">
-          <h4>{`${firstName} ${lastName}`}</h4>
+          <h4>{`${firstName} ${lastName}`} </h4>
           <p>{email}</p>
         </div>
       </div>
@@ -33,18 +33,18 @@ const ProfileDetails = ({ user }) => {
             <img src={angleIcon} alt="angle-icon" />
           </Link>
         </div>
-        <div>
+        {/* <div>
           <Link to="/account/profile/notification" className="links">
             <p>Notification</p>
             <img src={angleIcon} alt="angle-icon" />
           </Link>
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <Link to="/account/profile/language" className="links">
             <p>Language</p>
             <img src={angleIcon} alt="angle-icon" />
           </Link>
-        </div>
+        </div> */}
         <div>
           <Link to="/account/profile/referral" className="links">
             <p>Refferal Code</p>
@@ -55,12 +55,12 @@ const ProfileDetails = ({ user }) => {
 
       <h2>Security</h2>
       <div className="security">
-        <div>
+        {/* <div>
           <Link to="/account/profile/change-password" className="links">
             <p>Change Password</p>
             <img src={angleIcon} alt="angle-icon" />
           </Link>
-        </div>
+        </div> */}
         <div>
           <Link to="/" className="links">
             <p>Theme</p>

@@ -153,7 +153,7 @@ const AdminLogin = () => {
                 </div>
                 <p className="dontHaveAccount">
                   Don't have an account?{" "}
-                  <Link to="/sign-up">
+                  <Link to="/admin/register">
                     <strong>Sign Up </strong>
                   </Link>
                 </p>
