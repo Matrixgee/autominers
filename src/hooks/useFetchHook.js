@@ -17,16 +17,13 @@ const useFetchHook = () => {
       }
 
       try {
-        const res = await fetch(
-          "https://autominner-backend.onrender.com/api/user/account",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const res = await fetch("https://api.autominner.com/api/user/account", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
         if (!res.ok) {
           const errorText = await res.text(); // Read raw response (JSON or HTML)

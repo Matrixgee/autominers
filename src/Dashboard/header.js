@@ -27,7 +27,7 @@ const DashboardHeader = (props) => {
             <input type="text" name="search" id="Search" placeholder="Search" />
           </div>
           <Badge
-            badgeContent={4}
+            badgeContent={0}
             color="primary"
             className="staticHeaderJustifyItems"
           >
