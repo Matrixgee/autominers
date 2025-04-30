@@ -17,7 +17,7 @@ const AdminPage = () => {
 
     try {
       const res = await axios.get(
-        "https://autominner-backend.onrender.com/api/admin/users",
+        "https://api.autominner.com/api/admin/users",
         {
           headers: {
             "Content-Type": "application/json",

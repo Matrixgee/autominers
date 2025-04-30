@@ -42,7 +42,7 @@ const AdminLogin = () => {
 
     try {
       const response = await fetch(
-        "https://autominner-backend.onrender.com/api/admin/login",
+        "https://api.autominner.com/api/admin/login",
         {
           method: "POST",
           headers: {
