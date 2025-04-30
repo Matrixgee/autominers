@@ -14,16 +14,13 @@ const VerificationCode = ({ length, label, loading, onComplete }) => {
 
       const userDataWithOtp = { otp: otpNumber };
       console.log(`data sending is ${userDataWithOtp.otp}`);
-      const response = fetch(
-        "https://autominner-backend.onrender.com/api/auth/verify-otp",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(userDataWithOtp),
-        }
-      );
+      const response = fetch("https://api.autominner.com/api/auth/verify-otp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userDataWithOtp),
+      });
       const dataResp = (await response).statusText;
       if ((!response.status === 200) | (!response.status === 201)) {
         throw dataResp;
