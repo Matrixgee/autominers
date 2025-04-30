@@ -43,7 +43,7 @@ const Signup = () => {
     const toastingloadingId = toast.loading("Please wait....");
     try {
       const response = await fetch(
-        ` https://autominner-backend.onrender.com/api/auth/register`,
+        `https://api.autominner.com/api/auth/register`,
         {
           method: "POST",
           headers: {

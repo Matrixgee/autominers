@@ -32,7 +32,7 @@ const AllPlans = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://autominner-backend.onrender.com/api/admin/plans",
+        "https://api.autominner.com/api/admin/plans",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -62,7 +62,7 @@ const AllPlans = () => {
     const toastLoadingId = toast.loading("Deleting plan...");
     try {
       await axios.delete(
-        `https://autominner-backend.onrender.com/api/admin/plans/${planToDelete._id}`,
+        `https://api.autominner.com/api/admin/plans/${planToDelete._id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
