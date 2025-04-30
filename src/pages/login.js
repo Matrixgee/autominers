@@ -42,7 +42,7 @@ const Login = () => {
 
     try {
       const response = await fetch(
-        "https://api.autominner.com/api/auth/login",
+        "https://qfwph88s-8000.uks1.devtunnels.ms/api/auth/login",
         {
           method: "POST",
           headers: {
