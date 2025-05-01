@@ -45,7 +45,7 @@ const Deposit = () => {
     try {
       setloading(true);
       const res = await axios.post(
-        "https://autominner-backend.onrender.com/api/payment/deposit",
+        "https://api.autominner.com/api/payment/deposit",
         data,
         {
           headers: {

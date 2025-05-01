@@ -32,7 +32,7 @@ const Withdrawal = () => {
 
     try {
       const res = await axios.post(
-        "https://autominner-backend.onrender.com/api/payment/withdraw",
+        "https://api.autominner.com/api/payment/withdraw",
         { amount, walletAddress },
         {
           headers: {
